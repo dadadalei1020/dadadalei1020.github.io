@@ -1,0 +1,608 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo_miccall.png">
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    不愿透露姓名的大磊
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="miccall">
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">苦厄</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Git/">Git</a></li><li><a class="category-link" href="/categories/HDFS/">HDFS</a></li><li><a class="category-link" href="/categories/Java/">Java</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/Spark/">Spark</a>
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">归档</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="archive-link" href="/archives/2018/12/">十二月 2018</a></li><li><a class="archive-link" href="/archives/2018/10/">十月 2018</a></li><li><a class="archive-link" href="/archives/2018/09/">九月 2018</a>
+	                    </li></ul>
+	        </li>
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://upload-images.jianshu.io/upload_images/4929219-d47c70d303140585.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Spark-RDD</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="1-分组的topk"><a href="#1-分组的topk" class="headerlink" title="1. 分组的topk"></a>1. <strong>分组的topk</strong></h1><h2 id="1-1-filter-collect-实现"><a href="#1-1-filter-collect-实现" class="headerlink" title="1.1. filter**+collect**实现"></a>1.1. <strong>filter**</strong>+collect<strong>**实现</strong></h2><p>sortBy().take()</p>
+<p>top() + 隐式转换（隐式的object） Ordering 比较器</p>
+<p>RDD不支持嵌套操作：</p>
+<p><img src="/Spark-RDD/wpsCC98.tmp.jpg" alt="img"> </p>
+<pre><code>
+</code></pre><p>​    <em>// <a href="http://bigdata.doit.cn/huige" target="_blank" rel="noopener">http://bigdata.doit.cn/huige</a>    <a href="http://host:port" target="_blank" rel="noopener">http://host:port</a></em>    <strong>val</strong> lines: RDD[String] = sc.textFile(<strong>“f:/mrdata/teacher.log”</strong>)      <strong>val</strong> proData = lines.map(str =&gt; {       <strong>val</strong> index = str.lastIndexOf(<strong>“/“</strong>)       <strong>val</strong> tName = str.substring(index + 1)       <strong>val</strong> url = <strong>new</strong> URL(str.substring(0, index))       <strong>val</strong> host: String = url.getHost <em>// <a href="http://bigdata.doit.cn" target="_blank" rel="noopener">http://bigdata.doit.cn</a></em>      <strong>val</strong> subject = host.split(<strong>“**</strong>\<strong>**.”</strong>)(0)       ((subject, tName), 1)     })      <em>// 取出学科名称  然后 去重  然后collect</em>    <strong>val</strong> subArrays: Array[String] = proData.map(_._1.<em>1).distinct().collect()     <strong>val</strong> result: RDD[((String, String), Int)] = proData.reduceByKey(</em> + <em>)     <em>// 代码耦合性**//    val subArr = Array(“php”, “bigdata”, “javaee”)</em>    <strong>for</strong> (subject &lt;- subArrays) {       <strong>val</strong> bigdat: RDD[((String, String), Int)] = result.filter(</em>._1.<em>1 == subject)       <strong>val</strong> res: Array[((String, String), Int)] = bigdat.sortBy(-</em>._2).take(<em>topk</em>)       res.foreach(<em>println</em>)     }</p>
+<p><img src="/Spark-RDD/wpsCC99.tmp.jpg" alt="img"> </p>
+<h2 id="1-2-自定义分区器实现"><a href="#1-2-自定义分区器实现" class="headerlink" title="1.2. 自定义分区器实现"></a>1.2. <strong>自定义分区器实现</strong></h2><p><img src="/Spark-RDD/wpsCCAA.tmp.jpg" alt="img"> </p>
+<p><img src="/Spark-RDD/wpsCCAB.tmp.jpg" alt="img"> </p>
+<p><strong>val</strong> <em>topk</em> = 3    <strong>def</strong> main(args: Array[String]): Unit = {      <strong>val</strong> sc: SparkContext = <em>SparkUtils</em>(<strong>this</strong>.getClass.getSimpleName)      <em>// <a href="http://bigdata.doit.cn/huige" target="_blank" rel="noopener">http://bigdata.doit.cn/huige</a>    <a href="http://host:port" target="_blank" rel="noopener">http://host:port</a></em>    <strong>val</strong> lines: RDD[String] = sc.textFile(<strong>“f:/mrdata/teacher.log”</strong>)      <strong>val</strong> proData = lines.map(str =&gt; {       <strong>val</strong> index = str.lastIndexOf(<strong>“/“</strong>)       <strong>val</strong> tName = str.substring(index + 1)       <strong>val</strong> url = <strong>new</strong> URL(str.substring(0, index))       <strong>val</strong> host: String = url.getHost <em>// <a href="http://bigdata.doit.cn" target="_blank" rel="noopener">http://bigdata.doit.cn</a></em>      <strong>val</strong> subject = host.split(<strong>“**</strong>\<strong>**.”</strong>)(0)       ((subject, tName), 1)     })      <em>// 取出学科名称  然后 去重  然后collect</em>    <strong>val</strong> subArrays: Array[String] = proData.map(_._1.<em>1).distinct().collect()     <strong>val</strong> result: RDD[((String, String), Int)] = proData.reduceByKey(</em> + <em>)      <em>// 分区器   按照自定义的规则  把相同规则的数据， 放到一起（分区）</em>    <strong>val</strong> subPart: RDD[((String, String), Int)] = result.partitionBy(<em>MyPartitioner</em>(subArrays))      <strong>val</strong> finalRes: RDD[((String, String), Int)] = subPart.mapPartitions(it =&gt; {       it.toList.sortBy(-</em>._2).take(<em>topk</em>).iterator     })     finalRes.foreach(<em>println</em>)     sc.stop()   } }  <strong>class</strong> MyPartitioner(subArrays: Array[String]) <strong>extends</strong> Partitioner {   <em>// 学科和分区的编号</em>  <strong>private val</strong> <em>subAndIndexMp</em>: Map[String, Int] = subArrays.zipWithIndex.toMap   <em>// 分区数量</em>  <strong>override def</strong> numPartitions: Int = subArrays.length    <em>// 通过学科名来或者对应的分区编号   映射关系  —&gt; Map[Key,V]</em>  <strong>override def</strong> getPartition(key: Any): Int = {     <em>// key  (String, String)</em>    <strong>val</strong> sub = key.asInstanceOf[(String, String)]._1     <em>// 从集合中取出key对应的value，就是分区编号</em>    <em>subAndIndexMp</em>(sub)   } }  <strong>object</strong> MyPartitioner{   <strong>def</strong> apply(subArrays: Array[String]): MyPartitioner = <strong>new</strong> MyPartitioner(subArrays) }</p>
+<pre><code>val topk = 3
+
+  def main(args: Array[String]): Unit = {
+
+    val sc: SparkContext = SparkUtils(this.getClass.getSimpleName)
+
+    // http://bigdata.doit.cn/huige    http://host:port
+    val lines: RDD[String] = sc.textFile(&quot;f:/mrdata/teacher.log&quot;)
+
+    val proData = lines.map(str =&gt; {
+      val index = str.lastIndexOf(&quot;/&quot;)
+      val tName = str.substring(index + 1)
+      val url = new URL(str.substring(0, index))
+      val host: String = url.getHost // http://bigdata.doit.cn
+      val subject = host.split(&quot;\\.&quot;)(0)
+      ((subject, tName), 1)
+    })
+
+    // 取出学科名称  然后 去重  然后collect
+    val subArrays: Array[String] = proData.map(_._1._1).distinct().collect()
+    val result: RDD[((String, String), Int)] = proData.reduceByKey(_ + _)
+
+    // 分区器   按照自定义的规则  把相同规则的数据， 放到一起（分区）
+    val subPart: RDD[((String, String), Int)] = result.partitionBy(MyPartitioner(subArrays))
+
+    val finalRes: RDD[((String, String), Int)] = subPart.mapPartitions(it =&gt; {
+      it.toList.sortBy(-_._2).take(topk).iterator
+    })
+    finalRes.foreach(println)
+    sc.stop()
+  }
+}
+
+class MyPartitioner(subArrays: Array[String]) extends Partitioner {
+  // 学科和分区的编号
+  private val subAndIndexMp: Map[String, Int] = subArrays.zipWithIndex.toMap
+  // 分区数量
+  override def numPartitions: Int = subArrays.length
+
+  // 通过学科名来或者对应的分区编号   映射关系  ---&gt; Map[Key,V]
+  override def getPartition(key: Any): Int = {
+    // key  (String, String)
+    val sub = key.asInstanceOf[(String, String)]._1
+    // 从集合中取出key对应的value，就是分区编号
+    subAndIndexMp(sub)
+  }
+}
+
+object MyPartitioner{
+  def apply(subArrays: Array[String]): MyPartitioner = new MyPartitioner(subArrays)
+}
+</code></pre><p>代码中foreach的时候，加了sleep</p>
+<p>finalRes.foreach(t=&gt;<em>println</em>(Thread.<em>sleep</em>(100000)))</p>
+<p>访问的URL地址： <a href="http://localhost:4040" target="_blank" rel="noopener">http://localhost:4040</a>   </p>
+<p><img src="/Spark-RDD/wpsCD87.tmp.jpg" alt="img"> </p>
+<p>运行的效果：</p>
+<p><img src="/Spark-RDD/wpsCD97.tmp.jpg" alt="img"> </p>
+<p>3个stage阶段，有两次shuffle。 </p>
+<h2 id="1-3-优化的分区器"><a href="#1-3-优化的分区器" class="headerlink" title="1.3. 优化的分区器"></a>1.3. <strong>优化的分区器</strong></h2><p>在reduceByKey的时候，传递一个自定义的分区器</p>
+<p><em>// 分区器   按照自定义的规则  把相同规则的数据， 放到一起（分区）**</em>val<strong> result: RDD[((String, String), Int)] = proData.reduceByKey(<em>MyPartitioner</em>(subArrays),_ + _) </strong>val*<em> finalRes: RDD[((String, String), Int)] = result.mapPartitions(it =&gt; {   it.toList.sortBy(-_._2).take(</em>topk*).iterator })</p>
+<p>执行效果：</p>
+<p><img src="/Spark-RDD/wpsCDA8.tmp.jpg" alt="img"> </p>
+<h1 id="2-自定义排序"><a href="#2-自定义排序" class="headerlink" title="2. 自定义排序"></a>2. <strong>自定义排序</strong></h1><h2 id="2-1-单条件的排序"><a href="#2-1-单条件的排序" class="headerlink" title="2.1. 单条件的排序"></a>2.1. <strong>单条件的排序</strong></h2><p>​    <strong>val</strong> rdd1: RDD[String] = sc.makeRDD(<em>List</em>(<strong>“zsf 110 9999”</strong>,<strong>“zwj 23 8888”</strong>,<strong>“zzr 22 7777”</strong>,<strong>“sqc 28 1000”</strong>,<strong>“zm 23 888”</strong>))      <em>// 数据预处理</em>    <strong>val</strong> proDat: RDD[(String, Int, Int)] = rdd1.map(str =&gt; {       <strong>val</strong> strs = str.split(<strong>“ “</strong>)       (strs(0), strs(1).toInt, strs(2).toInt)     })      <em>// 按照攻击力排序**//    proDat.sortBy(-_._3).foreach(println)</em></p>
+<pre><code>
+</code></pre><pre><code>2.1.
+    val rdd1: RDD[String] = sc.makeRDD(List(&quot;zsf 110 9999&quot;,&quot;zwj 23 8888&quot;,&quot;zzr 22 7777&quot;,&quot;sqc 28 1000&quot;,&quot;zm 23 888&quot;))
+
+    // 数据预处理
+    val proDat: RDD[(String, Int, Int)] = rdd1.map(str =&gt; {
+      val strs = str.split(&quot; &quot;)
+      (strs(0), strs(1).toInt, strs(2).toInt)
+    })
+
+    // 按照攻击力排序
+//    proDat.sortBy(-_._3).foreach(println)
+</code></pre><h2 id="2-2-多条件的排序"><a href="#2-2-多条件的排序" class="headerlink" title="2.2. 多条件的排序"></a>2.2. <strong>多条件的排序</strong></h2><h3 id="2-2-1-利用类来封装数据"><a href="#2-2-1-利用类来封装数据" class="headerlink" title="2.2.1. 利用类来封装数据"></a>2.2.1. <strong>利用类来封装数据</strong></h3><p>1， 可以用样例类和类来封装数据，返回值的类型依然是RDD[类]</p>
+<p>2， 类必须实现比较规则和序列化特质 ，但是样例类可以不用实现序列化，因为已经默认实现了</p>
+<p>类 必须要实现序列化特质</p>
+<p><img src="/Spark-RDD/wpsCDA9.tmp.jpg" alt="img"> </p>
+<p>   <em>// 数据预处理  用类来封装数据 然后利用类的排序规则</em>    <strong>val</strong> proDat: RDD[Person] = rdd1.map(str =&gt; {       <strong>val</strong> strs = str.split(<strong>“ “</strong>)       <strong>new</strong> Person(strs(0), strs(1).toInt, strs(2).toInt)     })      <em>// 按照攻击力排序</em>    <strong>val</strong> value: RDD[Person] = proDat.sortBy(t =&gt; t)     value.coalesce(1).foreach(<em>println</em>)      sc.stop()   } }  <strong>case class</strong> Person(<strong>val</strong> name: String, <strong>val</strong> age: Int, <strong>val</strong> fight: Int) <strong>extends</strong> Ordered[Person]<em>/\</em> with Serializable <em>/</em>{   <strong>override def</strong> compare(that: Person): Int = {     <em>// 战力的降序 // 如果战力相同 年龄升序</em>    <strong>if</strong> (<strong>this</strong>.fight == that.fight) {       <strong>this</strong>.age - that.age     } <strong>else</strong> {       that.fight - <strong>this</strong>.fight     }   }    <strong>override def</strong> toString = <strong>s”Person(**</strong>$<strong>name</strong>,<strong> </strong>$<strong>age</strong>,<strong> </strong>$<strong>fight</strong>)”**}</p>
+<pre><code>   // 数据预处理  用类来封装数据 然后利用类的排序规则
+    val proDat: RDD[Person] = rdd1.map(str =&gt; {
+      val strs = str.split(&quot; &quot;)
+      new Person(strs(0), strs(1).toInt, strs(2).toInt)
+    })
+
+    // 按照攻击力排序
+    val value: RDD[Person] = proDat.sortBy(t =&gt; t)
+    value.coalesce(1).foreach(println)
+
+    sc.stop()
+  }
+}
+
+case class Person(val name: String, val age: Int, val fight: Int) extends Ordered[Person]/* with Serializable */{
+  override def compare(that: Person): Int = {
+    // 战力的降序 // 如果战力相同 年龄升序
+    if (this.fight == that.fight) {
+      this.age - that.age
+    } else {
+      that.fight - this.fight
+    }
+  }
+
+  override def toString = s&quot;Person($name, $age, $fight)&quot;
+}
+</code></pre><h2 id="2-3-隐式转换实现"><a href="#2-3-隐式转换实现" class="headerlink" title="2.3. 隐式转换实现"></a>2.3. <strong>隐式转换实现</strong></h2><p><img src="/Spark-RDD/wpsCDB9.tmp.jpg" alt="img"> </p>
+<p><em>// 数据预处理  用类来封装数据 然后利用类的排序规则**</em>val<strong> proDat: RDD[Person2] = rdd1.map(str =&gt; {   </strong>val<strong> strs = str.split(</strong>“ “<strong>)   </strong>new<strong> Person2(strs(0), strs(1).toInt, strs(2).toInt) })  <em>// 隐式的变量</em></strong>implicit  val<strong> ord:Ordering[Person2] = </strong>new<strong> Ordering[Person2] {   </strong>override def<strong> compare(x: Person2, y: Person2): Int = {     x.age - y.age   } }  <em>// 隐式的object   object优先使用</em></strong>implicit object<strong> Ordper </strong>extends<strong> Ordering[Person2] {   </strong>override def<strong> compare(x: Person2, y: Person2): Int = {     y.age - x.age   } }  <em>// 按照攻击力排序</em></strong>val*<em> value: RDD[Person2] = proDat.sortBy(t =&gt; t) value.coalesce(1).foreach(</em>println*)</p>
+<pre><code>// 数据预处理  用类来封装数据 然后利用类的排序规则
+val proDat: RDD[Person2] = rdd1.map(str =&gt; {
+  val strs = str.split(&quot; &quot;)
+  new Person2(strs(0), strs(1).toInt, strs(2).toInt)
+})
+
+// 隐式的变量
+implicit  val ord:Ordering[Person2] = new Ordering[Person2] {
+  override def compare(x: Person2, y: Person2): Int = {
+    x.age - y.age
+  }
+}
+
+// 隐式的object   object优先使用
+implicit object Ordper extends Ordering[Person2] {
+  override def compare(x: Person2, y: Person2): Int = {
+    y.age - x.age
+  }
+}
+
+// 按照攻击力排序
+val value: RDD[Person2] = proDat.sortBy(t =&gt; t)
+value.coalesce(1).foreach(println)
+</code></pre><p>类可以不需要实现比较规则。通过隐式转换获得。隐式的object和隐式的变量。</p>
+<p>隐式object具有优先权。</p>
+<h2 id="2-4-Ordering的on方法和元组封装"><a href="#2-4-Ordering的on方法和元组封装" class="headerlink" title="2.4. Ordering的on方法和元组封装"></a>2.4. <strong>Ordering的on方法和元组封装</strong></h2><p>​    <em>/**</em>      <strong> (String,Int,Int)    原始的数据类型               输入*      </strong> t=&gt;(- t._3,t._2)    比较的业务逻辑<em>      ** (Int,Int)            比较的业务逻辑对应的类型     返回值</em>      <strong>*      </strong>/<strong>//    implicit val ord = Ordering[(Int,Int)].on<a href="t=&gt;(- t._3,t._2">(String,Int,Int)</a>)<em>    </em>// 按照攻击力排序</strong>//    val value = proDat.sortBy(t =&gt; t)<em>    <strong>val</strong> value = proDat.sortBy(t =&gt; (- t._3,t._2))     value.coalesce(1).foreach(</em>println*) </p>
+<pre><code>
+</code></pre><pre><code>    /**
+      * (String,Int,Int)    原始的数据类型               输入
+      * t=&gt;(- t._3,t._2)    比较的业务逻辑
+      * (Int,Int)            比较的业务逻辑对应的类型     返回值
+      *
+      */
+//    implicit val ord = Ordering[(Int,Int)].on[(String,Int,Int)](t=&gt;(- t._3,t._2))
+    // 按照攻击力排序
+//    val value = proDat.sortBy(t =&gt; t)
+
+
+    val value = proDat.sortBy(t =&gt; (- t._3,t._2))
+    value.coalesce(1).foreach(println)
+</code></pre><p>掌握：</p>
+<p>1， 最简单的直接利用元组封装</p>
+<p>2， Ordering的on方法</p>
+<p>3， 隐式转换</p>
+<h1 id="3-RDD上的缓存持久化"><a href="#3-RDD上的缓存持久化" class="headerlink" title="3. RDD上的缓存持久化"></a>3. <strong>RDD上的缓存持久化</strong></h1><h2 id="3-1-简介"><a href="#3-1-简介" class="headerlink" title="3.1. 简介"></a>3.1. <strong>简介</strong></h2><p><strong>默认情况下，每一个转换过的**</strong>RDD<strong>**都会在它之上执行一个动作时被重新计算。</strong></p>
+<p>RDD上的业务逻辑，每次调用一次action算子，就会计算一次。</p>
+<p>需求： 当某一个rdd被调用多次时，不在重新运算了，而是直接拿该rdd的结果数据。</p>
+<p>需求实现： 利用缓存。</p>
+<h2 id="3-2-具体的API"><a href="#3-2-具体的API" class="headerlink" title="3.2. 具体的API"></a>3.2. <strong>具体的API</strong></h2><p>缓存,持久化  </p>
+<p><img src="/Spark-RDD/wpsCDCA.tmp.jpg" alt="img"> </p>
+<p><img src="/Spark-RDD/wpsCDCB.tmp.jpg" alt="img"> </p>
+<p><img src="/Spark-RDD/wpsCDCC.tmp.jpg" alt="img"> </p>
+<p>StorageLevel存储策略</p>
+<p><img src="/Spark-RDD/wpsCDCD.tmp.jpg" alt="img"> </p>
+<p><img src="/Spark-RDD/wpsCDCE.tmp.jpg" alt="img"> </p>
+<p>StorageLevel.MEMORY_ONLY: 仅仅使用内存        cache()</p>
+<p>StorageLevel.MEMORY_DISK: 仅仅使用磁盘</p>
+<p>StorageLevel.MEMORY_AND_DISK: 优先使用内存，内存不足，再使用磁盘</p>
+<h2 id="3-3-具体应该如何使用？？"><a href="#3-3-具体应该如何使用？？" class="headerlink" title="3.3. 具体应该如何使用？？"></a>3.3. <strong>具体应该如何使用？？</strong></h2><p>代码中，在某一个rdd上直接调用cache或者persist方法，传入一个具体的存储策略即可。</p>
+<p><img src="/Spark-RDD/wpsCDDF.tmp.jpg" alt="img"> </p>
+<p>什么时候用？？</p>
+<p>当某一个rdd被调用了多次的时候，就可以考虑使用cache或者persist。</p>
+<p>具体使用哪一种策略：</p>
+<p>一般情况下，cache或者 Memory_and_disk</p>
+<p>内存比较少              Memory_Only_ser</p>
+<h2 id="3-4-策略演示"><a href="#3-4-策略演示" class="headerlink" title="3.4. 策略演示"></a>3.4. <strong>策略演示</strong></h2><p>scala&gt; val rdd1 = sc.textFile(“hdfs://hdp-01:9000/storage”)rdd1: org.apache.spark.rdd.RDD[String] = hdfs://hdp-01:9000/storage MapPartitionsRDD[1] at textFile at <console>:24 scala&gt; rdd1.partitions.sizeres0: Int = 3 scala&gt; val rdd2 = rdd1.map((_,1))rdd2: org.apache.spark.rdd.RDD[(String, Int)] = MapPartitionsRDD[2] at map at <console>:26 scala&gt; rdd2.cache()res1: rdd2.type = MapPartitionsRDD[2] at map at <console>:26 scala&gt; rdd2.top(1)res2: Array[(String, Int)] = Array((<a href="http://php.51doit.cn/laoliu,1)" target="_blank" rel="noopener">http://php.51doit.cn/laoliu,1)</a>)              scala&gt;  scala&gt; rdd2.unpersist()res3: rdd2.type = MapPartitionsRDD[2] at map at <console>:26 scala&gt; import org.apache.spark.storage.StorageLevelimport org.apache.spark.storage.StorageLevel scala&gt; rdd2.persist(StorageLevel.MEMORY_ONLY_SER)res4: rdd2.type = MapPartitionsRDD[2] at map at <console>:26 scala&gt;  scala&gt; rdd2.top(1)res5: Array[(String, Int)] = Array((<a href="http://php.51doit.cn/laoliu,1)" target="_blank" rel="noopener">http://php.51doit.cn/laoliu,1)</a>)             </console></console></console></console></console></p>
+<pre><code>scala&gt; val rdd1 = sc.textFile(&quot;hdfs://hdp-01:9000/storage&quot;)
+rdd1: org.apache.spark.rdd.RDD[String] = hdfs://hdp-01:9000/storage MapPartitionsRDD[1] at textFile at &lt;console&gt;:24
+
+scala&gt; rdd1.partitions.size
+res0: Int = 3
+
+scala&gt; val rdd2 = rdd1.map((_,1))
+rdd2: org.apache.spark.rdd.RDD[(String, Int)] = MapPartitionsRDD[2] at map at &lt;console&gt;:26
+
+scala&gt; rdd2.cache()
+res1: rdd2.type = MapPartitionsRDD[2] at map at &lt;console&gt;:26
+
+scala&gt; rdd2.top(1)
+res2: Array[(String, Int)] = Array((http://php.51doit.cn/laoliu,1))             
+
+scala&gt; 
+
+scala&gt; rdd2.unpersist()
+res3: rdd2.type = MapPartitionsRDD[2] at map at &lt;console&gt;:26
+
+scala&gt; import org.apache.spark.storage.StorageLevel
+import org.apache.spark.storage.StorageLevel
+
+scala&gt; rdd2.persist(StorageLevel.MEMORY_ONLY_SER)
+res4: rdd2.type = MapPartitionsRDD[2] at map at &lt;console&gt;:26
+
+scala&gt; 
+
+scala&gt; rdd2.top(1)
+res5: Array[(String, Int)] = Array((http://php.51doit.cn/laoliu,1))             
+</code></pre><p>cache:直接使用java的序列化，内存占用比较多</p>
+<p><img src="/Spark-RDD/wpsCDE0.tmp.jpg" alt="img"> </p>
+<p>默认使用的是java的序列化机制，占用了比较多的内存。</p>
+<p>rdd2.persist(StorageLevel.MEMORY_ONLY_SER) </p>
+<p>使用spark中的序列化机制，内存占用更少</p>
+<p><img src="/Spark-RDD/wpsCDE1.tmp.jpg" alt="img"> </p>
+<p>原始的数据的输入：读取的是hdfs的数据：(16.21M*3）</p>
+<p><img src="/Spark-RDD/wpsCDF1.tmp.jpg" alt="img"> </p>
+<p><img src="/Spark-RDD/wpsCDF2.tmp.jpg" alt="img"> </p>
+<pre><code>scala&gt; import org.apache.spark.storage.StorageLevel
+import org.apache.spark.storage.StorageLevel
+
+scala&gt; rdd2.persist(StorageLevel.MEMORY_ONLY_SER)
+res4: rdd2.type = MapPartitionsRDD[2] at map at &lt;console&gt;:26
+
+scala&gt; 
+
+scala&gt; rdd2.top(1)
+res5: Array[(String, Int)] = Array((http://php.51doit.cn/laoliu,1))
+</code></pre><p>scala&gt; import org.apache.spark.storage.StorageLevelimport org.apache.spark.storage.StorageLevel scala&gt; rdd2.persist(StorageLevel.MEMORY_ONLY_SER)res4: rdd2.type = MapPartitionsRDD[2] at map at <console>:26 scala&gt;  scala&gt; rdd2.top(1)res5: Array[(String, Int)] = Array((<a href="http://php.51doit.cn/laoliu,1)" target="_blank" rel="noopener">http://php.51doit.cn/laoliu,1)</a>)</console></p>
+<p>缓存之后，基于缓存过的rdd的操作：读取的数据是从缓存中加载的：（缓存了67.8M）</p>
+<p><img src="/Spark-RDD/wpsCDF3.tmp.jpg" alt="img"> </p>
+<p>Memory_and_disk</p>
+<p>优先使用内存，内存不足，再使用磁盘</p>
+<p><img src="/Spark-RDD/wpsCDF4.tmp.png" alt="img"> </p>
+<p><img src="/Spark-RDD/wpsCDF5.tmp.png" alt="img"> </p>
+<p>如果内存不足，只能存储部分数据：</p>
+<p>部分数据以什么为单位？？分区为单位（一个分区中的数据，要么都存储了，要么都没有存储）</p>
+<p>如果有3个分区，但是内存不足：</p>
+<p>可能只存储了一个分区</p>
+<p>可以能存储了2个分区</p>
+<p>还有可能，一个分区的数据都没有存储。</p>
+<p>总结：</p>
+<p>1， cache,persist都是lazy执行的，当调度action算子的时候，把数据写入到相应的存储介质中（内存 、 磁盘等）</p>
+<p>2， cache，persist不改变 rdd的依赖关系。（对rdd1做了cache，rdd1的依赖关系不变）</p>
+<p>3， cache之后，基于该rdd的任何的操作，数据都从存储介质中获取</p>
+<p>4， 如果内存不足，数据不能cache或者cache一部分数据，那么会依赖依赖关系从头开始运算</p>
+<p>取消cache:unpersist()</p>
+<p>当spark-submit任务执行完成之后，占用的缓存会被清除。</p>
+<p><img src="/Spark-RDD/wpsCDF6.tmp.jpg" alt="img"> </p>
+<h1 id="4-checkpoint"><a href="#4-checkpoint" class="headerlink" title="4. checkpoint"></a>4. <strong>checkpoint</strong></h1><p>了解即可</p>
+<p>把rdd中的数据，直接存储到hdfs中。</p>
+<p>适用场景： 非常非常非常不容易得到的数据。迭代次数非常多的数据。</p>
+<p>当对rdd做checkpoint之后，rdd的依赖关系已经改变了。</p>
+<p><img src="/Spark-RDD/wpsCDF7.tmp.jpg" alt="img"> </p>
+<p>1， 必须要对SparkContext设置 checkPointDir（必须是分布式文件系统） 会自动创建目录</p>
+<p>2， checkpoint 是lazy执行的，当调用action算子时，才真正的执行checkpoint</p>
+<p>3， checkpoint会产生2个job。第一个job，执行业务逻辑；第二个job，把rdd中的产生数据写入到hdfs目录下。</p>
+<p>4， 某一个rdd被checkpoint之后，原有的rdd依赖关系被删除了。取而代之的是CheckpointRDD</p>
+<p>5， 基于被ck的rdd之上的所有操作，依赖关系都是从checkpointRDD开始，数据都从hdfs中读取。</p>
+<pre><code>scala&gt; rdd2.checkpoint
+org.apache.spark.SparkException: Checkpoint directory has not been set in the SparkContext
+  at org.apache.spark.rdd.RDD.checkpoint(RDD.scala:1544)
+  ... 48 elided
+
+scala&gt; sc.setCheckpointDir(&quot;hdfs://hdp-01:9000/ck-2019&quot;)
+
+scala&gt; val rdd1 = sc.textFile(&quot;hdfs://hdp-01:9000/storage&quot;)
+rdd1: org.apache.spark.rdd.RDD[String] = hdfs://hdp-01:9000/storage MapPartitionsRDD[6] at textFile at &lt;console&gt;:24
+
+scala&gt;  val rdd2 = rdd1.map((_,1))
+rdd2: org.apache.spark.rdd.RDD[(String, Int)] = MapPartitionsRDD[7] at map at &lt;console&gt;:26
+
+scala&gt; rdd2.checkpoint
+
+scala&gt; rdd2.top(2)
+res6: Array[(String, Int)] = Array((http://php.51doit.cn/laoliu,1), (http://php.51doit.cn/laoliu,1))
+
+scala&gt; rdd2.map((_,1)).top(1)
+res7: Array[((String, Int), Int)] = Array(((http://php.51doit.cn/laoliu,1),1))  
+</code></pre><p>scala&gt; rdd2.checkpointorg.apache.spark.SparkException: Checkpoint directory has not been set in the SparkContext  at org.apache.spark.rdd.RDD.checkpoint(RDD.scala:1544)  … 48 elided scala&gt; sc.setCheckpointDir(“hdfs://hdp-01:9000/ck-2019”) scala&gt; val rdd1 = sc.textFile(“hdfs://hdp-01:9000/storage”)rdd1: org.apache.spark.rdd.RDD[String] = hdfs://hdp-01:9000/storage MapPartitionsRDD[6] at textFile at <console>:24 scala&gt;  val rdd2 = rdd1.map((<em>,1))rdd2: org.apache.spark.rdd.RDD[(String, Int)] = MapPartitionsRDD[7] at map at <console>:26 scala&gt; rdd2.checkpoint scala&gt; rdd2.top(2)res6: Array[(String, Int)] = Array((<a href="http://php.51doit.cn/laoliu,1)" target="_blank" rel="noopener">http://php.51doit.cn/laoliu,1)</a>, (<a href="http://php.51doit.cn/laoliu,1)" target="_blank" rel="noopener">http://php.51doit.cn/laoliu,1)</a>) scala&gt; rdd2.map((</console></em>,1)).top(1)res7: Array[((String, Int), Int)] = Array(((<a href="http://php.51doit.cn/laoliu,1),1)" target="_blank" rel="noopener">http://php.51doit.cn/laoliu,1),1)</a>)  </console></p>
+<p>有几个 分区，就会生成几个文件：</p>
+<p>checkpoint的目录结构：</p>
+<p>/ckDir/Application-标识/rdd-标识/分区数据</p>
+<p><img src="/Spark-RDD/wpsCE08.tmp.jpg" alt="img"> </p>
+<p>RDD中有数据么？？</p>
+<p>RDD本身是没有数据的，仅仅是一个抽象的概念。</p>
+<p>任务最终是按照task来执行。</p>
+<h1 id="5-Spark中内存管理机制"><a href="#5-Spark中内存管理机制" class="headerlink" title="5. Spark中内存管理机制"></a>5. <strong>Spark中内存管理机制</strong></h1><p>Spark的内存管理机制：</p>
+<p>静态内存管理机制</p>
+<p>统一的内存管理机制，spark1.6引入的，现行的管理机制。</p>
+<p><img src="/Spark-RDD/wpsCE09.tmp.jpg" alt="img"> </p>
+<h2 id="5-1-静态内存管理机制"><a href="#5-1-静态内存管理机制" class="headerlink" title="5.1. 静态内存管理机制"></a>5.1. <strong>静态内存管理机制</strong></h2><p>各个模块都有具体的比例值。</p>
+<p>容易造成一半海水，一半火焰的局面。</p>
+<p>目前已经被淘汰。</p>
+<h2 id="5-2-新的统一的内存管理机制"><a href="#5-2-新的统一的内存管理机制" class="headerlink" title="5.2. 新的统一的内存管理机制"></a>5.2. <strong>新的统一的内存管理机制</strong></h2><h3 id="5-2-1-内存的分配"><a href="#5-2-1-内存的分配" class="headerlink" title="5.2.1. 内存的分配"></a>5.2.1. <strong>内存的分配</strong></h3><p><img src="/Spark-RDD/wpsCE0A.tmp.png" alt="img"> </p>
+<p>预留内存：300m</p>
+<p>可用内存 = 系统内存 -  预留内存</p>
+<p>可用内存 = 统一内存（60%） + 其他 （40%）</p>
+<p>统一内存 = 存储内存（Storage）50%  + 执行内存（Execution） 50%</p>
+<p>executor的内存：</p>
+<p>–executor-memory = 1024m</p>
+<p>可用内存 = 1024  - 300 m </p>
+<p>统一内存：（1024 – 300）* 0.6  =  434.4MB</p>
+<p>存储内存Storage：     434.4 * 0.5 = 217.2MB</p>
+<p>执行内存Execution：     434.4 * 0.5 = 217.2MB</p>
+<p>提交任务时，修改配置参数：</p>
+<p>–conf spark.memory.fraction=0.5</p>
+<p><a href="http://spark.apache.org/docs/2.2.0/configuration.html" target="_blank" rel="noopener">http://spark.apache.org/docs/2.2.0/configuration.html</a> </p>
+<p><img src="/Spark-RDD/wpsCE0B.tmp.jpg" alt="img"> </p>
+<h3 id="5-2-2-内存的组成部分"><a href="#5-2-2-内存的组成部分" class="headerlink" title="5.2.2. 内存的组成部分"></a>5.2.2. <strong>内存的组成部分</strong></h3><h4 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a><strong>Storage</strong></h4><p>60% * 50%</p>
+<p>用于缓存RDD（核心）、展开partition、存放Direct Task Result、存放广播变量。在Spark Streaming receiver 模式中，也用来存放每个batch 的blocks。</p>
+<h4 id="Execution"><a href="#Execution" class="headerlink" title="Execution"></a><strong>Execution</strong></h4><p>60% * 50%</p>
+<p>用于shuffle、join、sort、aggregation 等操作中的缓存、buffer。</p>
+<p><strong>storage</strong> 和execution 内存都通过MemoryManager 来申请和管理，而另一块内存则不受<strong>MemoryManager</strong> 管理。</p>
+<h4 id="Others"><a href="#Others" class="headerlink" title="Others"></a><strong>Others</strong></h4><p>40% </p>
+<p>剩余的空间（40％）保留用于用户数据结构，Spark中的内部元数据，并且在稀疏和异常大的记录的情况下保护OOM错误。本块内存，不受MemoryManager管理。</p>
+<p>在spark 运行过程中使用：</p>
+<p>比如序列化及反序列化使用的内存，各个对象、元数据、临时变量使用的内存，函数调用使用的堆栈等。</p>
+<p>作为误差缓冲：</p>
+<p>由于storage 和execution 中有很多内存的使用是估算的，存在误差。当storage 或execution 内存使用超出其最大限制时，有这样一个安全的误差缓冲在可以大大减小OOM 的概率。</p>
+<h3 id="5-2-3-动态占用机制"><a href="#5-2-3-动态占用机制" class="headerlink" title="5.2.3. 动态占用机制"></a>5.2.3. <strong>动态占用机制</strong></h3><p><img src="/Spark-RDD/wpsCE0C.tmp.png" alt="img"> </p>
+<p>1， 当Storage和Execution的内存都用完了，溢出到磁盘</p>
+<p>2， 双方都可以占用对方的空闲内存。</p>
+<p>3， Execution可以清除被Storage占用的内存。(cache 之后的数据，可能会清除，缓存的数据，被清除，不影响程序的正常使用)。反之，Storage不能清除被Execution占用的内存。</p>
+<p>双方占用，但是只能单方清除被占用的内存。</p>
+<p>默认的预留内存： 300M</p>
+<p>executor的最低内存： 450M  （300*1.5）</p>
+<p>掌握：</p>
+<p>统一内存管理机制</p>
+<p>存储 + 执行 = 60%   （各占50%）</p>
+<p>其他 = 40% </p>
+<p>动态占用机制</p>
+<h1 id="6-综合案例"><a href="#6-综合案例" class="headerlink" title="6. 综合案例"></a>6. <strong>综合案例</strong></h1><h2 id="6-1-spark中数据处理的流程"><a href="#6-1-spark中数据处理的流程" class="headerlink" title="6.1. spark中数据处理的流程"></a>6.1. <strong>spark中数据处理的流程</strong></h2><h2 id="6-2-求归属地"><a href="#6-2-求归属地" class="headerlink" title="6.2. 求归属地"></a>6.2. <strong>求归属地</strong></h2><p>两个数据集</p>
+<p>ip地址的规则数据：</p>
+<p>访问日志数据</p>
+<p>ip规则数据，要切分 —》  起始ip，终止ip，省份</p>
+<p>日志数据           —-》   ip地址  -à 10进制ip</p>
+<p>匹配 –》 二分搜索进行匹配</p>
+<p>省份  —》 wordcount</p>
+<p>把结果数据写入到mysql中</p>
+<p>DriverManager.</p>
+<p>conn.prepareStatment()</p>
+<p>ip地址转10进制的方法</p>
+<p> <em>// 定义一个方法，把 定义一个方法，把 ip 地址转换为 地址转换为 10 进制**</em>def<strong> ip2Long(ip: String) = {   </strong>val<strong> split = ip.split(</strong>“<strong><strong>\</strong></strong>.”<strong>)   </strong>var<strong> inum = 0L   </strong>for** (i &lt;- 0 until split.length) {     inum = split(i).toLong | inum &lt;&lt; 8L   }   inum } </p>
+<pre><code>
+// 定义一个方法，把 定义一个方法，把 ip 地址转换为 地址转换为 10 进制
+def ip2Long(ip: String) = {
+  val split = ip.split(&quot;\\.&quot;)
+  var inum = 0L
+  for (i &lt;- 0 until split.length) {
+    inum = split(i).toLong | inum &lt;&lt; 8L
+  }
+  inum
+}
+
+</code></pre>
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/Spark-RDD/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/Spark-RDD/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
