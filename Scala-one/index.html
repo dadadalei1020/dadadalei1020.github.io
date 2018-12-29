@@ -1,0 +1,811 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo_miccall.png">
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    不愿透露姓名的大磊
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="miccall">
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">苦厄</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Git/">Git</a></li><li><a class="category-link" href="/categories/HDFS/">HDFS</a></li><li><a class="category-link" href="/categories/Java/">Java</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/Spark/">Spark</a>
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">归档</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="archive-link" href="/archives/2018/12/">十二月 2018</a></li><li><a class="archive-link" href="/archives/2018/10/">十月 2018</a></li><li><a class="archive-link" href="/archives/2018/09/">九月 2018</a>
+	                    </li></ul>
+	        </li>
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://upload-images.jianshu.io/upload_images/4929219-d47c70d303140585.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Scala-one</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="1-课程目标"><a href="#1-课程目标" class="headerlink" title="1. 课程目标"></a>1. <strong>课程目标</strong></h1><p>1， 基本目标：熟练使用scala语言编程（spark编程）</p>
+<p>2， 中级目标： 能使用scala来写一个简易spark通信框架（RPC）</p>
+<p>3， 终极目标：理解（掌握更好）scala中的高阶函数，高级语法，看spark源码</p>
+<h1 id="2-scala的整体课程安排"><a href="#2-scala的整体课程安排" class="headerlink" title="2. scala的整体课程安排"></a>2. <strong>scala的整体课程安排</strong></h1><h2 id="2-1-scala的简介，安装，基本语法"><a href="#2-1-scala的简介，安装，基本语法" class="headerlink" title="2.1. scala的简介，安装，基本语法"></a>2.1. <strong>scala的简介，安装，基本语法</strong></h2><h2 id="2-2-scala中的集合框架"><a href="#2-2-scala中的集合框架" class="headerlink" title="2.2. scala中的集合框架"></a>2.2. <strong>scala中的集合框架</strong></h2><h2 id="2-3-面向对象"><a href="#2-3-面向对象" class="headerlink" title="2.3. 面向对象"></a>2.3. <strong>面向对象</strong></h2><h2 id="2-4-并发编程"><a href="#2-4-并发编程" class="headerlink" title="2.4. 并发编程"></a>2.4. <strong>并发编程</strong></h2><h2 id="2-5-高级语法"><a href="#2-5-高级语法" class="headerlink" title="2.5. 高级语法"></a>2.5. <strong>高级语法</strong></h2><h1 id="3-scala简介"><a href="#3-scala简介" class="headerlink" title="3. scala简介"></a>3. <strong>scala简介</strong></h1><h2 id="3-1-scala简介"><a href="#3-1-scala简介" class="headerlink" title="3.1. scala简介"></a>3.1. <strong>scala简介</strong></h2><p>官方网站：<a href="https://www.scala-lang.org/" target="_blank" rel="noopener">https://www.scala-lang.org/</a> </p>
+<p>scala是一门编程语言  java  SQL  php  </p>
+<p><img src="/Scala-one/wps5A37.tmp.jpg" alt="img"> </p>
+<p><img src="/Scala-one/wps5A38.tmp.jpg" alt="img"> </p>
+<p>语言特点：</p>
+<p>面向对象 +  函数式编程</p>
+<p>函数式编程：</p>
+<p>方法论。</p>
+<p>函数式编程的本质：<strong>定义规范，传递具体的实现。</strong></p>
+<p>用一系列的函数调用，来实现业务逻辑。</p>
+<p>.map().flatMap().map().reduce()</p>
+<p>scala和java：</p>
+<p>scala就是披着scala语法的java。</p>
+<p>scala代码，需要先编译，再执行。</p>
+<p>.scala   —-》  .class 文件  -à  JVM</p>
+<p>scala程序  —》 java程序  —》 jvm平台</p>
+<p>scala之父：Martin Odersky  </p>
+<h2 id="3-2-scala的优点"><a href="#3-2-scala的优点" class="headerlink" title="3.2. scala的优点"></a>3.2. <strong>scala的优点</strong></h2><h3 id="3-2-1-优雅，语言表达能力强"><a href="#3-2-1-优雅，语言表达能力强" class="headerlink" title="3.2.1. 优雅，语言表达能力强"></a>3.2.1. <strong>优雅，语言表达能力强</strong></h3><p>代码规范：</p>
+<p>代码 要有注释 </p>
+<p>分行实现</p>
+<h3 id="3-2-2-能融合hadoop的生态圈"><a href="#3-2-2-能融合hadoop的生态圈" class="headerlink" title="3.2.2. 能融合hadoop的生态圈"></a>3.2.2. <strong>能融合hadoop的生态圈</strong></h3><h3 id="3-2-3-spark的开发语言"><a href="#3-2-3-spark的开发语言" class="headerlink" title="3.2.3. spark的开发语言"></a>3.2.3. <strong>spark的开发语言</strong></h3><h1 id="4-体验scala的函数式编程"><a href="#4-体验scala的函数式编程" class="headerlink" title="4. 体验scala的函数式编程"></a>4. <strong>体验scala的函数式编程</strong></h1><p>hadoop  wordcount: </p>
+<p>思路： 读数据—》 切分 —》 组装 —》 分组聚合  —》  排序</p>
+<p>一行代码搞定。</p>
+<p>spark中的wordcount:</p>
+<p><img src="/Scala-one/wps5A49.tmp.jpg" alt="img"> </p>
+<p><strong>注意：上述代码，暂时不需要练习。</strong></p>
+<h1 id="5-scala的安装及基本使用"><a href="#5-scala的安装及基本使用" class="headerlink" title="5. scala的安装及基本使用"></a>5. <strong>scala的安装及基本使用</strong></h1><p>注意： 必须保证安装scala的机器，已经安装了jdk1.8+。</p>
+<p><img src="/Scala-one/wps5A4A.tmp.jpg" alt="img"> </p>
+<p>下载安装包：</p>
+<p>下载地址： <a href="https://www.scala-lang.org/download/2.11.8.html" target="_blank" rel="noopener">https://www.scala-lang.org/download/2.11.8.html</a> </p>
+<p><img src="/Scala-one/wps5A4B.tmp.jpg" alt="img"> </p>
+<h2 id="5-1-windows平台"><a href="#5-1-windows平台" class="headerlink" title="5.1. windows平台"></a>5.1. <strong>windows平台</strong></h2><p>使用免安装版本的安装包。解压即可使用。</p>
+<p>1， 解压到指定的目录。</p>
+<p>2， 配置环境变量</p>
+<p>SCALA_HOME</p>
+<p>PATH</p>
+<p><img src="/Scala-one/wps5A4C.tmp.jpg" alt="img"> </p>
+<p><img src="/Scala-one/wps5A4D.tmp.jpg" alt="img"> </p>
+<p>验证：</p>
+<p>scala -version</p>
+<p><img src="/Scala-one/wps5A5E.tmp.jpg" alt="img"> </p>
+<h2 id="5-2-linux平台"><a href="#5-2-linux平台" class="headerlink" title="5.2. linux平台"></a>5.2. <strong>linux平台</strong></h2><p>只需要安装一台机器即可。</p>
+<p>注意使用的是.tgz包。  .tar.gz </p>
+<p><img src="/Scala-one/wps5A5F.tmp.jpg" alt="img"> </p>
+<p>\1. 上传安装包。</p>
+<p>\2. 解压到指定目录下</p>
+<p>[root@hdp-01 ~]# tar -zxvf scala-2.11.8.tgz -C /usr/local/</p>
+<p>3， 配置环境变量</p>
+<p><img src="/Scala-one/wps5A60.tmp.jpg" alt="img"> </p>
+<p>4， source 生效</p>
+<p>source /etc/profile</p>
+<p>5.验证：</p>
+<p><img src="/Scala-one/wps5A61.tmp.jpg" alt="img"> </p>
+<p>到此为止，scala的安装结束。</p>
+<h2 id="5-3-scala的第一个程序"><a href="#5-3-scala的第一个程序" class="headerlink" title="5.3. scala的第一个程序"></a>5.3. <strong>scala的第一个程序</strong></h2><p>Java版本的：public static void main(string [] args) {System.out.println(“hello  java”);}</p>
+<p>scala版本的hello：</p>
+<p>object ScalaTest {def main(args:Array[String]):Unit={  println(“hello scala!!!!”)}}</p>
+<p>先编译：</p>
+<p><strong>scalac</strong> ScalaTest.scala</p>
+<p><img src="/Scala-one/wps5A62.tmp.jpg" alt="img"> </p>
+<p>再执行：</p>
+<p><strong>scal**</strong>c** ScalaTest</p>
+<p><img src="/Scala-one/wps5A63.tmp.jpg" alt="img"> </p>
+<p><strong>补充：</strong></p>
+<p>java中，要求类名和源文件的名称一致的。</p>
+<p>但是，scala中，没有此要求。</p>
+<h2 id="5-4-scala的-REPL"><a href="#5-4-scala的-REPL" class="headerlink" title="5.4. scala的 REPL"></a>5.4. <strong>scala的 REPL</strong></h2><p>scala的交互式命令行：</p>
+<p>REPL：read – evaluate – print — loop</p>
+<p>直接输入scala即可进入命令行窗口：</p>
+<p><img src="/Scala-one/wps5A73.tmp.jpg" alt="img"> </p>
+<p><img src="/Scala-one/wps5A74.tmp.jpg" alt="img"> </p>
+<p>开发使用IDE集成工具。</p>
+<p>集成开发环境（integrated development environment）</p>
+<p>scala的开发工具： IDEA ，scala Eclipse</p>
+<h1 id="6-IDEA-—-集成开发工具"><a href="#6-IDEA-—-集成开发工具" class="headerlink" title="6. IDEA**—**集成开发工具"></a>6. <strong>IDEA**</strong>—<strong>**集成开发工具</strong></h1><h2 id="6-1-idea简介"><a href="#6-1-idea简介" class="headerlink" title="6.1. idea简介"></a>6.1. <strong>idea简介</strong></h2><p>官网： <a href="#section=windows">https://www.jetbrains.com/idea/download/#section=windows</a> </p>
+<p>社区版： 免费的，功能相对较少。</p>
+<p>最终版： 收费的，功能比较完善。</p>
+<p><img src="/Scala-one/wps5A75.tmp.jpg" alt="img"> </p>
+<p>收费版破解即可。</p>
+<p>安装方式：</p>
+<p>一路next即可安装完成。</p>
+<p>注意： 把IDEA安装在非系统盘。</p>
+<h2 id="6-2-破解"><a href="#6-2-破解" class="headerlink" title="6.2. 破解"></a>6.2. <strong>破解</strong></h2><p>1， 最终版安装完成之后的桌面。</p>
+<p><img src="/Scala-one/wps5A76.tmp.jpg" alt="img"> </p>
+<p>2，把JetbrainsCrack-2.8-release-enc.jar 放到IntelliJ IDEA的安装bin目录下</p>
+<p><img src="/Scala-one/wps5A77.tmp.jpg" alt="img"> </p>
+<p>3，在指定的配置文件中添加配置</p>
+<p>打开bin目录下idea.exe.VMOPTIONS 和 idea64.exe.VMOPTIONS文件 最后添加 -javaagent:D:\soft\IntellijIDEA\IntelliJ IDEA 2018.1.4\bin\JetbrainsCrack-2.8-release-enc.jar</p>
+<p><img src="/Scala-one/wps5A78.tmp.jpg" alt="img"> </p>
+<p><img src="/Scala-one/wps5A79.tmp.jpg" alt="img"> </p>
+<p><img src="/Scala-one/wps5A8A.tmp.jpg" alt="img"> </p>
+<p>5， 双击启动IDEA</p>
+<p>进入到如下界面：</p>
+<p><img src="/Scala-one/wps5A8B.tmp.png" alt="img"> </p>
+<p><img src="/Scala-one/wps5A8C.tmp.png" alt="img"> </p>
+<p>选中Activation code，粘贴上如下代码：</p>
+<pre><code>ThisCrackLicenseId-{    
+&quot;licenseId&quot;:&quot;ThisCrackLicenseId&quot;,    
+&quot;licenseeName&quot;:&quot;idea&quot;,    
+&quot;assigneeName&quot;:&quot;&quot;,    
+&quot;assigneeEmail&quot;:&quot;idea@163.com&quot;,    
+&quot;licenseRestriction&quot;:&quot;For This Crack, Only Test! Please support genuine!!!&quot;,    
+&quot;checkConcurrentUse&quot;:false,    
+&quot;products&quot;:[    
+{&quot;code&quot;:&quot;II&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},    
+{&quot;code&quot;:&quot;DM&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},    
+{&quot;code&quot;:&quot;AC&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},    
+{&quot;code&quot;:&quot;RS0&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},    
+{&quot;code&quot;:&quot;WS&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},    
+{&quot;code&quot;:&quot;DPN&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},    
+{&quot;code&quot;:&quot;RC&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},    
+{&quot;code&quot;:&quot;PS&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},    
+{&quot;code&quot;:&quot;DC&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},    
+{&quot;code&quot;:&quot;RM&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},    
+{&quot;code&quot;:&quot;CL&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;},    
+{&quot;code&quot;:&quot;PC&quot;,&quot;paidUpTo&quot;:&quot;2099-12-31&quot;}    
+],    
+&quot;hash&quot;:&quot;2911276/0&quot;,    
+&quot;gracePeriodDays&quot;:7,    
+&quot;autoProlongated&quot;:false}
+</code></pre><p>破解完成，可以正常启动使用啦。</p>
+<h2 id="6-3-安装启动时界面选择："><a href="#6-3-安装启动时界面选择：" class="headerlink" title="6.3. 安装启动时界面选择："></a>6.3. <strong>安装启动时界面选择：</strong></h2><p><img src="/Scala-one/wps5A8D.tmp.jpg" alt="img"> </p>
+<h2 id="6-4-scala的插件安装"><a href="#6-4-scala的插件安装" class="headerlink" title="6.4. scala的插件安装"></a>6.4. <strong>scala的插件安装</strong></h2><p>虽然已经安装好了IDEA，但是不能编写scala程序</p>
+<p>需要安装scala和IDEA的集成插件。</p>
+<p><strong>注意：</strong> 插件的版本必须和 IDEA的版本保持一致。或者相差不大。</p>
+<p><img src="/Scala-one/wps5A8E.tmp.jpg" alt="img"> </p>
+<p>插件下载地址：</p>
+<p><a href="http://plugins.jetbrains.com/?idea_cehttp://plugins.jetbrains.com/plugin/1347-scala" target="_blank" rel="noopener">http://plugins.jetbrains.com/?idea_ce</a>  </p>
+<p><a href="http://plugins.jetbrains.com/plugin/1347-scala" target="_blank" rel="noopener">http://plugins.jetbrains.com/plugin/1347-scala</a> </p>
+<h3 id="6-4-1-离线安装"><a href="#6-4-1-离线安装" class="headerlink" title="6.4.1. 离线安装"></a>6.4.1. <strong>离线安装</strong></h3><p>利用已经下载好的的插件。</p>
+<p>Configure -&gt; Plugins -&gt; Install plugin from disk -&gt; 选择Scala插件-&gt; OK -&gt; 重启IDEA</p>
+<p><img src="/Scala-one/wps5A9E.tmp.jpg" alt="img"> </p>
+<p><img src="/Scala-one/wps5A9F.tmp.jpg" alt="img"> </p>
+<p><img src="/Scala-one/wps5AA0.tmp.jpg" alt="img"> </p>
+<p><img src="/Scala-one/wps5AA1.tmp.jpg" alt="img"> </p>
+<h3 id="6-4-2-在线安装："><a href="#6-4-2-在线安装：" class="headerlink" title="6.4.2. 在线安装："></a>6.4.2. <strong>在线安装：</strong></h3><p><img src="/Scala-one/wps5AA2.tmp.png" alt="img"> </p>
+<h2 id="6-5-利用IDEA来创建工程"><a href="#6-5-利用IDEA来创建工程" class="headerlink" title="6.5. 利用IDEA来创建工程"></a>6.5. <strong>利用IDEA来创建工程</strong></h2><p>1， 选择scala – IDEA</p>
+<p><img src="/Scala-one/wps5AA3.tmp.jpg" alt="img"> </p>
+<p><img src="/Scala-one/wps5AB4.tmp.jpg" alt="img"> </p>
+<p>创建好工程之后，打开的界面是：</p>
+<h2 id="6-6-IDEA的基本使用："><a href="#6-6-IDEA的基本使用：" class="headerlink" title="6.6. IDEA的基本使用："></a>6.6. <strong>IDEA的基本使用：</strong></h2><p>系统提供的快捷键：</p>
+<p><img src="/Scala-one/wps5AB5.tmp.jpg" alt="img"> </p>
+<p>ctrl + alt + s         IDEA的配置</p>
+<p>ctrl + alt + shift + s     工程的配置</p>
+<p><img src="/Scala-one/wps5AB6.tmp.jpg" alt="img"> </p>
+<h2 id="6-7-常用的配置"><a href="#6-7-常用的配置" class="headerlink" title="6.7. 常用的配置"></a>6.7. <strong>常用的配置</strong></h2><h3 id="6-7-1-字体的修改"><a href="#6-7-1-字体的修改" class="headerlink" title="6.7.1. 字体的修改"></a>6.7.1. <strong>字体的修改</strong></h3><p><img src="/Scala-one/wps5AB7.tmp.jpg" alt="img"> </p>
+<h3 id="6-7-2-字符集"><a href="#6-7-2-字符集" class="headerlink" title="6.7.2. 字符集"></a>6.7.2. <strong>字符集</strong></h3><p><img src="/Scala-one/wps5AB8.tmp.jpg" alt="img"> </p>
+<h3 id="6-7-3-修改主题样式："><a href="#6-7-3-修改主题样式：" class="headerlink" title="6.7.3. 修改主题样式："></a>6.7.3. <strong>修改主题样式：</strong></h3><p><img src="/Scala-one/wps5AB9.tmp.jpg" alt="img"> </p>
+<h2 id="6-8-IDEA编程"><a href="#6-8-IDEA编程" class="headerlink" title="6.8. IDEA编程"></a>6.8. <strong>IDEA编程</strong></h2><p>创建包—》 创建类</p>
+<p><img src="/Scala-one/wps5ACA.tmp.jpg" alt="img"> </p>
+<p>右键  –》 Run xxx类 </p>
+<p>快捷键 ： ctrl + shift + f10</p>
+<pre><code>object HelloScala {
+  def main(args: Array[String]): Unit = {
+    println(&quot;hello scala!!&quot;)
+  }
+}
+</code></pre><pre><code>
+String[] str = {&quot;hadoop&quot;, &quot;scala&quot;, &quot;spark&quot;};
+
+List&lt;String&gt; lst = Arrays.asList(str);
+
+// List集合汇总都是string
+
+
+// 定义一个map方法，实现对集合中的每一个数据执行 转换成大写的业务逻辑
+// map方法的返回类型是 List&lt;String&gt;
+
+//  List&lt;String&gt; map（xxx）{xxxx}方法，
+// map方法是一个通用的方法  大写的操作，substr
+// 而且要求，具体的业务逻辑在调用map方法的时候传递进去
+
+// map方法的参数参数设置为 接口
+
+</code></pre><h1 id="7-JAVa的map方法的实现："><a href="#7-JAVa的map方法的实现：" class="headerlink" title="7. JAVa的map方法的实现："></a>7. <strong>JAVa的map方法的实现：</strong></h1><pre><code>public static List&lt;String&gt; map(List&lt;String&gt; lsts) {
+    // shift + Enter 另起一行
+    // .var  回车
+    ArrayList&lt;String&gt; newLst = new ArrayList&lt;&gt;();
+    for (String str : lsts) {
+        String newStr = str.toUpperCase();
+        newLst.add(newStr);
+    }
+    return newLst;
+}
+
+// psvm  main 方法的快捷键
+public static void main(String[] args) {
+
+    String[] str = {&quot;hadoop&quot;, &quot;scala&quot;, &quot;spark&quot;};
+
+    List&lt;String&gt; lst = Arrays.asList(str);
+
+    MyList myList = new MyList(lst);
+
+    /**
+     *  定义一个通用的map方法，对集合中的每一条元素执行相同的操作，返回一个新的集合
+     *  具体的业务逻辑，在调用map方法的时候，传递
+     *  在定义方法的时候，定义好规范，传递什么参数，有几个参数，返回值是什么类型
+     *  在调用的时候，传递具体的实现  （具体的实现根据需求来）
+     */
+    List&lt;String&gt; result1 = myList.map(new MapFunction() {
+        @Override
+        public String transform(String oldStr) {
+            // 真正的业务逻辑
+            return oldStr.toUpperCase();
+        }
+    });
+
+    List&lt;String&gt; re2 = myList.map(new MapFunction() {
+        @Override
+        public String transform(String oldStr) {
+            // 真正的业务逻辑
+            return oldStr.substring(0, 2);
+        }
+    });
+
+    for(String s:re2){
+        // syso ---&gt;  sout
+        System.out.println(s);
+    }
+
+
+    // List集合汇总都是string
+    // 定义一个map方法，实现对集合中的每一个数据执行 转换成大写的业务逻辑
+    // map方法的返回类型是 List&lt;String&gt;
+
+    //  List&lt;String&gt; map（xxx）{xxxx}方法，
+    // map方法是一个通用的方法  大写的操作，substr
+    // 而且要求，具体的业务逻辑在调用map方法的时候传递进去
+
+
+    // map方法的参数参数设置为 接口
+
+</code></pre><pre><code>public class MyList {
+    private List&lt;String&gt; lst;
+
+    public MyList(){}
+    public MyList(List&lt;String&gt; lst) {
+        this.lst = lst;
+    }
+
+    /**
+     *  参数是一个接口
+     *  定义map方法的时候，参数是一个接口
+     * @param mp
+     * @return
+     */
+    public List&lt;String&gt; map(MapFunction mp){
+        ArrayList&lt;String&gt; tmp = new ArrayList&lt;&gt;();
+        for(String str:lst){
+            // 执行某一项业务逻辑，返回一个新的字符串
+            String newStr = mp.transform(str);
+            tmp.add(newStr);
+        }
+        return tmp;
+    }
+}
+
+</code></pre><pre><code>public interface MapFunction {
+
+    // 抽象方法
+    public String transform(String oldStr);
+}
+
+</code></pre><h1 id="8-scala的基本语法"><a href="#8-scala的基本语法" class="headerlink" title="8. scala的基本语法"></a>8. <strong>scala的基本语法</strong></h1><h2 id="8-1-数据类型"><a href="#8-1-数据类型" class="headerlink" title="8.1. 数据类型"></a>8.1. <strong>数据类型</strong></h2><p>基本的层级结构：</p>
+<p>Any  </p>
+<p>​    AnyVal            值类型</p>
+<p>​    AnyRef            引用类型</p>
+<p>AnyVal:</p>
+<p>​    数值类型：  Int     Double  Float         Short     Byte  <strong>L</strong>ong  Char</p>
+<p>​    非数值类型：Boolean    Unit</p>
+<p><strong>注意事项：</strong> </p>
+<p>1，层级结构（Any—AnyVal/AnyRef）</p>
+<p>2， 没有基本数据类型和引用类型之分。<strong>首字母都是大写的</strong>。</p>
+<p>3， 注意Unit类型。</p>
+<p>Unit： 表示没有返回值。相当于java中的void。该类型只有一个值: ()</p>
+<p>int a = 100</p>
+<p>val c:Unit = ()</p>
+<p><img src="/Scala-one/wps5ACB.tmp.png" alt="img"> </p>
+<p>AnyRef: </p>
+<p>所有的类，都是引用类型。String</p>
+<h2 id="8-2-变量"><a href="#8-2-变量" class="headerlink" title="8.2. 变量"></a>8.2. <strong>变量</strong></h2><p>2个修饰变量的关键字。</p>
+<p>val / var   定义变量的关键字。</p>
+<p>java中的变量定义：  int a = 100</p>
+<p>变量的定义形式：</p>
+<p>val / var    变量名称:变量类型 =  变量值</p>
+<p>val  不可变。 修饰的变量，相当于Java中用final修饰的变量。 值不能改。</p>
+<p>var  可变的。 修饰的变量，值可以改变</p>
+<p><strong>注意：</strong> 一般情况下，都是要val。除非必须要改变值，才使用var（比如循环中）。</p>
+<pre><code>scala&gt; val name:String = &quot;zxy&quot;
+name: String = zxy
+
+scala&gt; val u:Unit=()
+u: Unit = ()
+
+scala&gt; var age:Int = 50
+age: Int = 50
+
+scala&gt; name = &quot;ldh&quot;
+&lt;console&gt;:12: error: reassignment to val
+       name = &quot;ldh&quot;
+            ^
+
+scala&gt; age = 51
+age: Int = 51
+</code></pre><p>正常情况下，可以省去变量类型，编译器会自动推导。</p>
+<p>scala&gt; val price = 9.9price: Double = 9.9 scala&gt; val str= “hello”str: String = hello</p>
+<pre><code>scala&gt; val price = 9.9
+price: Double = 9.9
+
+scala&gt; val str= &quot;hello&quot;
+str: String = hello
+</code></pre><h2 id="8-3-表达式"><a href="#8-3-表达式" class="headerlink" title="8.3. 表达式"></a>8.3. <strong>表达式</strong></h2><p>条件表达式</p>
+<p>if(){} </p>
+<p>if(){} else{}</p>
+<p>if(){} else if(){} else {}</p>
+<pre><code>val score: Int = 99
+
+// 条件表达式有返回值
+val res: Boolean = if (3 &gt; 2) {
+  true
+} else {
+  false
+}
+//    println(res)
+
+// 每一个分支的返回值是最后一行的返回值。如果是3》2 Boolean   println() Unit
+// 如果返回值类型不一致，基本的原则，就是共同的父类，遵循就近原则
+val c: Any = if (score &gt; 90) {
+  println(&quot;卓越&quot;) // 方法的返回值就是void   Unit
+} else if (score &gt; 60) {
+  println(&quot;及格&quot;)
+} else {
+  println(&quot;不及格&quot;)
+  3 &gt; 2 // Boolean
+  &quot;str&quot;
+}
+
+
+// 下面的d 和 d2是一样的。 如果缺少了else 分支，那么就默认有  else ()
+val d = if (score &gt; 100) {
+  &quot;优秀&quot;
+}
+
+val d2 = if (score &gt; 100) {
+  &quot;优秀&quot;
+} else {
+  ()
+}
+
+// 默认省去了{} ，编译器自动识别一行为分支的内容  if(3&gt;2) true else false
+if (score &gt; 100) {
+  10
+  println(10)
+} else 100
+
+</code></pre><p>注意事项：</p>
+<p>1， 条件表达式有返回值   val res = if(){} else {}</p>
+<p>2， 返回值由每一个分支最后一行的值来决定</p>
+<p>最后一行是3 &gt; 2 该分支的返回值是 true,类型是Boolean</p>
+<p> 最后一行是 println(“”) 该分支的返回值是 ()，类型是Unit </p>
+<p>3， 如果各个分支的返回值类型不一致，返回值的类型，是由共同的父类决定。就近原则</p>
+<p>4， 在某一分支有一行内容的情况下，可以省去{}。</p>
+<p>5， 如果缺少了else分支，相当于默认有 else ()</p>
+<h2 id="8-4-如何关联源码："><a href="#8-4-如何关联源码：" class="headerlink" title="8.4. 如何关联源码："></a>8.4. <strong>如何关联源码：</strong></h2><p><img src="/Scala-one/wps5ACC.tmp.jpg" alt="img"> </p>
+<p>需要先把源码包解压到一个文件夹下。</p>
+<p>选择scala源码包的目录。</p>
+<h2 id="8-5-循环"><a href="#8-5-循环" class="headerlink" title="8.5. 循环"></a>8.5. <strong>循环</strong></h2><h3 id="8-5-1-for循环"><a href="#8-5-1-for循环" class="headerlink" title="8.5.1. for循环"></a>8.5.1. <strong>for循环</strong></h3><p>基本的使用形式：</p>
+<p>for(a  <strong>&lt;-</strong>  数组/集合) println(a)   这里相当于增强for循环。a是集合或者数组中的元素。</p>
+<p>生成器： to  until    生成器的步长默认是1</p>
+<p>to  [ ]    两边都是包含的</p>
+<p>until [ )         不包含右边界的值</p>
+<p>scala&gt; 1 to 3res0: scala.collection.immutable.Range.Inclusive = Range(1, 2, 3) scala&gt; 1 until 3res1: scala.collection.immutable.Range = Range(1, 2)</p>
+<p>指定步长：</p>
+<p>scala&gt; 3 to 1  by -1res3: scala.collection.immutable.Range = Range(3, 2, 1) scala&gt; 3.to(1,-1)res4: scala.collection.immutable.Range.Inclusive = Range(3, 2, 1)</p>
+<pre><code>// 数组的定义
+val arr = Array[Int](1, 3, 5, 6, 7, 8, 10)
+
+// 增强for循环的形式  打印的是元素
+for (a &lt;- arr) {
+  //      println(a)
+}
+
+// 利用传统的打印形式
+// 生成器 to  until
+
+for (i &lt;- 0 to arr.length - 1) {
+  //      println(arr(i)) // java中： arr[]  scala 中： ()
+}
+
+// 倒序输出
+// 方案1： 数组反转
+for (a &lt;- arr.reverse) {
+  //      println(a)
+}
+
+// 生成器
+for (i &lt;- arr.length - 1 to 0 by -1) {
+  println(arr(i))
+}
+
+println(&quot;---------------&quot;)
+// 打印所有的偶数\
+//  守卫模式  带守卫的for循环  加判断条件
+for (a &lt;- arr if (a % 2 == 0)) {
+  println(a)
+}
+
+// 嵌套for循环：
+for (i &lt;- 1 to 3) {
+  // 1
+  for (j &lt;- 1 to 3) { // 1 2 3
+    if (i != j) { // 12 13 21 23 31 32
+      print(i * 10 + j + &quot; &quot;)
+    }
+  }
+}
+
+println()
+for (i &lt;- 1 to 3; j &lt;- 1 to 3 if (i != j)) print(i * 10 + j + &quot; &quot;)
+
+
+// yield  推导式
+
+// .var     alt + T 添加变量的类型
+val ints: Array[Int] = for (a &lt;- arr) yield a * 10
+
+// foreach 用于打印
+ints.foreach(println)
+</code></pre><p>函数式编程的再体验：</p>
+<p>scala&gt; val arr= Array<a href="1,3,4,5,6,8,19,10">Int</a>arr: Array[Int] = Array(1, 3, 4, 5, 6, 8, 19, 10) </p>
+<p>scala&gt; arr.filter(x=&gt;x%2==0)res5: Array[Int] = Array(4, 6, 8, 10) </p>
+<p>scala&gt; arr.map(x=&gt;x*10)res6: Array[Int] = Array(10, 30, 40, 50, 60, 80, 190, 100)</p>
+<h3 id="8-5-2-while循环"><a href="#8-5-2-while循环" class="headerlink" title="8.5.2. while循环"></a>8.5.2. <strong>while循环</strong></h3><p>while(条件){业务逻辑}</p>
+<p>do{业务逻辑}while(条件)</p>
+<p>1， 猜100以内的数字小游戏</p>
+<p><strong>import</strong> scala.io.StdIn<strong>val</strong> i: Int = StdIn.readInt()</p>
+<p>2， 求100以内的素数</p>
+<p>素数 ： 除了1和自己之外，不能被其他的数整除</p>
+<h1 id="9-方法和函数"><a href="#9-方法和函数" class="headerlink" title="9. 方法和函数"></a>9. <strong>方法和函数</strong></h1><h2 id="9-1-方法"><a href="#9-1-方法" class="headerlink" title="9.1. 方法"></a>9.1. <strong>方法</strong></h2><p>一个方法，就是一段业务逻辑的综合。</p>
+<p>定义方法的关键字： def</p>
+<p>方法的定义方式：</p>
+<p>def 方法名称(参数列表):方法的返回值类型={方法体}</p>
+<p>def method1(a:Int,b:Int):Int = a+b</p>
+<pre><code>
+// 定义了2个参数的方法
+def m1(a: Int, b: Int): Int = a + b
+
+// 方法的返回值类型可以省略 ,编译器会自动推导方法的返回值类型
+def m2(x: Int) = x * 10
+
+// 空参的方法
+def m3() = 100
+
+def m4 = 100
+
+
+// 有return关键字的方法，  递归调用的方法 必须要有返回值
+def m5(x: Int): Int = {
+  return x * 10
+}
+
+// 4 1*2*3*4
+def rec(x: Int): Int = {
+  if (x &lt; 2) {
+    1
+  } else {
+    x * rec(x - 1)
+  }
+}
+
+// 可变参数的方法  参数列表是一个集合
+def m6(x: Int*) = {
+  //x:Seq[Int]
+  //    for(a &lt;- x){}
+  x.sum // 集合的方法
+}
+
+// 给定一个数据为参数，返回数组中的最大值
+def m7(arr:Array[Int])={
+  arr.max
+}
+
+def main(args: Array[String]): Unit = {
+
+  println(m6(1, 2, 3))
+
+
+  println(rec(4))
+
+  // 对象名称.方法
+  MethodDemo.m1(10, 20)
+
+  // 简写，直接调用方法的名称
+  val res: Int = m1(100, 200)
+
+  println(res)
+
+  // 空参方法的调用，
+  // 如果定义的时候有()，调用的时候，可以不加
+  // 如果定义的时候，没有(),那么调用的时候不能加
+  println(m3())
+  println(m4)
+  println(m3)
+  //    println(m4()) // 报错
+}
+</code></pre><p>有return关键字的方法和递归调用的方法，必须要有返回值类型。</p>
+<p><img src="/Scala-one/wps5ADC.tmp.jpg" alt="img"> </p>
+<p>方法的返回值一定要放在最后一行。</p>
+<p>for循环和while的返回值是Unit。</p>
+<p><em>// 给定一个数据为参数，返回数组中的最大值**</em>def<strong> m7(arr: Array[Int]) = {   arr.max   <em>println</em>(</strong>“hello”<strong>)   </strong>for*<em> (i &lt;- arr) {     </em>println<em>(i)   }   </em>// 返回值一定放在最后一行*  10 }</p>
+<h2 id="9-2-函数"><a href="#9-2-函数" class="headerlink" title="9.2. 函数"></a>9.2. <strong>函数</strong></h2><p>函数类似于方法。同样可以是一段业务逻辑的综合。</p>
+<p>函数有2种定义方式：简写;复杂的写法</p>
+<p>函数的关键字  <strong>=&gt;</strong></p>
+<h3 id="9-2-1-第一种定义方式："><a href="#9-2-1-第一种定义方式：" class="headerlink" title="9.2.1. 第一种定义方式："></a>9.2.1. <strong>第一种定义方式：</strong></h3><p>val /var  函数的名称 = (函数的参数列表) =&gt;   {函数体}</p>
+<p>val f1 = (a:Int,b:Int) =&gt; a + b </p>
+<p>这种定义方式，函数的返回值类型，会自动推导。根据函数体的返回值（最后一行的值）</p>
+<p>scala&gt; val f1 = (a:Int,b:Int) =&gt; a + b f1: (Int, Int) =&gt; Int = <function2> scala&gt; val f1 = (a:Int,b:Int) =&gt; a &gt; b f1: (Int, Int) =&gt; Boolean = <function2></function2></function2></p>
+<p><img src="/Scala-one/wps5ADD.tmp.jpg" alt="img"> </p>
+<p>定义函数之后，返回的是函数的签名信息：</p>
+<p>函数的签名： 函数的名称 输入参数的类型及个数  函数的返回值类型</p>
+<p>函数签名实际上就是定义好了函数的规范。</p>
+<p>Function实际上就是java中的接口。</p>
+<p>匿名函数：</p>
+<p>scala&gt; (a:Int,b:Int) =&gt; if(a&gt;b)a else b res20: (Int, Int) =&gt; Int = <function2></function2></p>
+<h3 id="9-2-2-第二种定义方式："><a href="#9-2-2-第二种定义方式：" class="headerlink" title="9.2.2. 第二种定义方式："></a>9.2.2. <strong>第二种定义方式：</strong></h3><p>scala&gt; val f1 = (a:Int,b:Int) =&gt; a + b </p>
+<p>f1: (Int, Int) =&gt; Int = <function2></function2></p>
+<p>定义方式：</p>
+<p>val /var 函数名称:(输入参数类型) =&gt;  返回值类型 = (输入参数的引用) =&gt; 函数体</p>
+<p>val f1:(Int,Int) =&gt; Int = (a:Int,b:Int) =&gt; a + b </p>
+<p>简写为：</p>
+<p>val f1:(Int,Int) =&gt; Int = (a,b) =&gt; a + b </p>
+<p><strong>val</strong> <em>f1</em> = (a:Int,b:Int) =&gt; a + b <strong>def</strong> main(args: Array[String]): Unit = {    <em>// 函数的调用形式，同方法的调用</em>  <strong>val</strong> res: Int = <em>f1</em>(10,20)   <em>println</em>(res) }</p>
+<h2 id="9-3-函数可以作为方法的参数"><a href="#9-3-函数可以作为方法的参数" class="headerlink" title="9.3. 函数可以作为方法的参数"></a>9.3. <strong>函数可以作为方法的参数</strong></h2><p>当函数作为方法的参数的时候，定义的时候，使用的是函数的签名信息，就是下图的左半部分，</p>
+<p>调用的时候，传递的就是具体的业务实现，就是下图的右半部分。</p>
+<p><img src="/Scala-one/wps5ADE.tmp.jpg" alt="img"> </p>
+<pre><code>def add(x:Int,b:Int) = x + b
+
+val f1=(a:Int,b:Int) =&gt; a + b
+
+val f2=(x:Int) =&gt; x * 100
+
+// m2 方法传递一个函数作为方法的参数，函数是一个参数的函数
+def m2(f:(Int)=&gt;Int)={
+    f(10)
+}
+
+def m3(f:(Int)=&gt;Int,a:Int)={
+  f(a)
+}
+
+def main(args: Array[String]): Unit = {
+
+  // 传递一个已经存在的，满足条件的函数
+  println(m2(f2))
+  // 匿名函数
+  println(m2((x:Int) =&gt; x * 1000))
+  println(m3(x =&gt; x * 1000,100))
+
+  //当函数作为方法的参数的时候，一定传递的是函数的签名信息（规范）
+</code></pre>
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/Scala-one/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/Scala-one/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
