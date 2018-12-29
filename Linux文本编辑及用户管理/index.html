@@ -106,7 +106,7 @@
 	            <a href="#s1">归档</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="archive-link" href="/archives/2018/12/">十二月 2018</a></li><li><a class="archive-link" href="/archives/2018/11/">十一月 2018</a></li><li><a class="archive-link" href="/archives/2018/10/">十月 2018</a></li><li><a class="archive-link" href="/archives/2018/09/">九月 2018</a>
+	                        <a class="archive-link" href="/archives/2018/12/">十二月 2018</a></li><li><a class="archive-link" href="/archives/2018/10/">十月 2018</a></li><li><a class="archive-link" href="/archives/2018/09/">九月 2018</a>
 	                    </li></ul>
 	        </li>
 	        
@@ -173,10 +173,10 @@
 </ul>
 <p>v：可视模式<br>V：可视行模式<br>Ctrl+v：可视块模式<br>注意<br>在所有可视模式中，d和x键可以用删除选定的内容<br>在可视块模式中，选中所需行，按I键输入内容，之后按两次esc键，可在所有选定行光标处添加同样的内容。</p>
 <h4 id="第二节-用户和组"><a href="#第二节-用户和组" class="headerlink" title="第二节 用户和组"></a>第二节 用户和组</h4><ul>
-<li>简介<br><code>`</code><br>linux操作系统是一个多用户操作系统，它允许多用户同时登录到系统上并使用资源。系统会根据账户来区分每个用户的文件，进程，任务和工作环境，使得每个用户工作都不受干扰。</li>
+<li>简介</li>
 </ul>
+<p>linux操作系统是一个多用户操作系统，它允许多用户同时登录到系统上并使用资源。系统会根据账户来区分每个用户的文件，进程，任务和工作环境，使得每个用户工作都不受干扰。</p>
 <p>配置文件<br>保存用户信息的文件：/etc/passwd<br>保存密码的文件：/etc/shadow<br>保存用户组的文件：/etc/group<br>保存用户组密码的文件：/etc/gshadow<br>用户配置文件：/etc/default/useradd</p>
-<p><code>`</code></p>
 <p>用户在系统中是分为角色的，通过UID来识别角色<br>root用户，系统唯一，可以操作系统任何文件和命令，拥有最高权限，UID=0<br>虚拟用户(系统账户)，不具有登录系统能力，但却是系统运行不可缺少的用户。如：bin、daemon、ftp、mail等，UID为1—499之间<br>普通真实用户，可以登录系统，权限有限，靠管理员创建，UID为500—60000之间</p>
 <p> 系统账户<br>1 – 99：由distributions自行创建的系统账号<br>100 – 499：若用户有系统账号需求时，可以使用的UID<br>为了更好的管理用户，出现组group的概念<br>基本组（私有组） 当用户创建文件和文件夹时，默认属于私有组<br>附加组（公共组）</p>
 <ul>
