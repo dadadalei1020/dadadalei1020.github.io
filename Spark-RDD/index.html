@@ -323,8 +323,7 @@ value.coalesce(1).foreach(println)
 <p>具体使用哪一种策略：</p>
 <p>一般情况下，cache或者 Memory_and_disk</p>
 <p>内存比较少              Memory_Only_ser</p>
-<h2 id="3-4-策略演示"><a href="#3-4-策略演示" class="headerlink" title="3.4. 策略演示"></a>3.4. <strong>策略演示</strong></h2><p>scala&gt; val rdd1 = sc.textFile(“hdfs://hdp-01:9000/storage”)rdd1: org.apache.spark.rdd.RDD[String] = hdfs://hdp-01:9000/storage MapPartitionsRDD[1] at textFile at <console>:24 scala&gt; rdd1.partitions.sizeres0: Int = 3 scala&gt; val rdd2 = rdd1.map((_,1))rdd2: org.apache.spark.rdd.RDD[(String, Int)] = MapPartitionsRDD[2] at map at <console>:26 scala&gt; rdd2.cache()res1: rdd2.type = MapPartitionsRDD[2] at map at <console>:26 scala&gt; rdd2.top(1)res2: Array[(String, Int)] = Array((<a href="http://php.51doit.cn/laoliu,1)" target="_blank" rel="noopener">http://php.51doit.cn/laoliu,1)</a>)              scala&gt;  scala&gt; rdd2.unpersist()res3: rdd2.type = MapPartitionsRDD[2] at map at <console>:26 scala&gt; import org.apache.spark.storage.StorageLevelimport org.apache.spark.storage.StorageLevel scala&gt; rdd2.persist(StorageLevel.MEMORY_ONLY_SER)res4: rdd2.type = MapPartitionsRDD[2] at map at <console>:26 scala&gt;  scala&gt; rdd2.top(1)res5: Array[(String, Int)] = Array((<a href="http://php.51doit.cn/laoliu,1)" target="_blank" rel="noopener">http://php.51doit.cn/laoliu,1)</a>)             </console></console></console></console></console></p>
-<pre><code>scala&gt; val rdd1 = sc.textFile(&quot;hdfs://hdp-01:9000/storage&quot;)
+<h2 id="3-4-策略演示"><a href="#3-4-策略演示" class="headerlink" title="3.4. 策略演示"></a>3.4. <strong>策略演示</strong></h2><pre><code>scala&gt; val rdd1 = sc.textFile(&quot;hdfs://hdp-01:9000/storage&quot;)
 rdd1: org.apache.spark.rdd.RDD[String] = hdfs://hdp-01:9000/storage MapPartitionsRDD[1] at textFile at &lt;console&gt;:24
 
 scala&gt; rdd1.partitions.size
