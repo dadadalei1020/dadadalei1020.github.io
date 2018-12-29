@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo_miccall.png">
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    不愿透露姓名的大磊
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="miccall">
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">苦厄</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Git/">Git</a></li><li><a class="category-link" href="/categories/HDFS/">HDFS</a></li><li><a class="category-link" href="/categories/Java/">Java</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/Spark/">Spark</a>
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">归档</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="archive-link" href="/archives/2018/12/">十二月 2018</a></li><li><a class="archive-link" href="/archives/2018/10/">十月 2018</a></li><li><a class="archive-link" href="/archives/2018/09/">九月 2018</a>
+	                    </li></ul>
+	        </li>
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url(https://upload-images.jianshu.io/upload_images/4929219-d47c70d303140585.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Linux基础命令</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p><img src="/Linux基础/QQ截图20181026204301.png" alt="Linux基础"></p>
+<h3 id="Linux系统的重启与关机"><a href="#Linux系统的重启与关机" class="headerlink" title="Linux系统的重启与关机"></a>Linux系统的重启与关机</h3><p>重启命令<br>reboot<br>shutdown -r now 立刻重启(root用户使用)<br>shutdown -r 10 过10分钟自动重启(root用户使用)<br>shutdown -r 20:35 在时间为20:35时候重启(root用户使用)<br>如果是通过shutdown命令设置重启的话，可以用shutdown -c命令取消重启</p>
+<p>关机命令<br> halt     立刻关机<br> poweroff     立刻关机<br> shutdown -h now     立刻关机(root用户使用)<br> shutdown -h 10     10分钟后自动关机</p>
+<h3 id="Linux运行级别解析"><a href="#Linux运行级别解析" class="headerlink" title="Linux运行级别解析"></a>Linux运行级别解析</h3><p>运行级别<br>   配置文件：/etc/inittab</p>
+<p><img src="/Linux基础/QQ截图20181026204448.png" alt="Linux基础"></p>
+<p>查看运行级别<br>使用runlevel命令，分别显示：切换前的运行级别、当前的运行级别<br> 临时切换运行级别<br> 使用init命令结合0-6运行级别参数</p>
+<p><img src="/Linux基础/QQ截图20181026204601.png" alt="Linux基础"></p>
+<h3 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h3><h5 id="查看主机名"><a href="#查看主机名" class="headerlink" title="查看主机名"></a>查看主机名</h5><p>hostname命令<br>查看当前主机名<br>   [root@localhost ~]# hostname<br>   localhost.localdomain<br>   [root@localhost ~]# hostname<br>设置当前主机名（一次性修改，重启之后变回原来）</p>
+<h5 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h5><p>临时修改(一次性修改，重启后变回原来的)<br>   [root@localhost ~]# hostname<br>   localhost.localdomain<br>   [root@localhost ~]# hostname lanou<br>   [root@localhost ~]# hostname<br>   [root@lanou ~]#</p>
+<p>永久修改（修改配置文件）<br>/etc/hostname文件<br> 用途：保存全局网络设置，主要包括主机名信息<br>lanou     //设定主机名</p>
+<h5 id="测试网络连接"><a href="#测试网络连接" class="headerlink" title="测试网络连接"></a>测试网络连接</h5><p>ping命令<br> 测试网络连通性<br> 格式：ping [选项] 目标主机</p>
+<p>[root@localhost ~]# ping 192.168.4.110<br>PING 192.168.4.110 (192.168.4.110) 56(84) bytes of data.<br>64 bytes from 192.168.4.110: icmp_seq=1 ttl=128 time=0.694 ms<br>64 bytes from 192.168.4.110: icmp_seq=2 ttl=128 time=0.274 ms<br>……<br>   按Ctrl+C中止测试</p>
+<h5 id="查看网络接口信息"><a href="#查看网络接口信息" class="headerlink" title="查看网络接口信息"></a>查看网络接口信息</h5><p>查看所有活动网络接口的信息<br>   执行 ifconfig命令</p>
+<p>查看指定网络接口信息<br> 格式：ifconfig    网络接口名</p>
+<p>Ifconfig不能用，使用yum命令<br>yum install net-tools<br>yum install net-tools -y(遇到所有选项选y)<br>是否存在问题？yum命令可用吗？</p>
+<h5 id="禁用、启用网络接口配置"><a href="#禁用、启用网络接口配置" class="headerlink" title="禁用、启用网络接口配置"></a>禁用、启用网络接口配置</h5><p>重启network网络服务</p>
+<p>[root@localhost ~]# service network restart<br>正在关闭接口 eth0：            [确定]<br>关闭环回接口：                [确定]<br>弹出环回接口：                [确定]<br>弹出界面 eth0：                [确定]</p>
+<h5 id="设置防火墙"><a href="#设置防火墙" class="headerlink" title="设置防火墙"></a>设置防火墙</h5><p>查看防火墙状态<br>service firewalld status<br>centos7关闭防火墙<br>//临时关闭<br>systemctl stop firewalld<br>//禁止开机启动<br>systemctl disable firewalld</p>
+<h5 id="本地主机映射文件"><a href="#本地主机映射文件" class="headerlink" title="本地主机映射文件"></a>本地主机映射文件</h5><p>etc/hosts 文件<br>用途：保存主机名与IP地址的映射记录</p>
+<p>[root@localhost ~]# cat /etc/hosts<br>127.0.0.1        localhost.localdomain  localhost<br>……<br>119.75.218.70     <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></p>
+<p><img src="/Linux基础/QQ截图20181026204745.png" alt="Linux基础"></p>
+<h5 id="设置网络信息"><a href="#设置网络信息" class="headerlink" title="设置网络信息"></a>设置网络信息</h5><pre><code>/etc/sysconfig/network-scripts/ 目录下的
+ifcfg-ens33配置文件... ...
+[root@localhost ~]#vim /etc/sysconfig/network-scripts/ifcfg-ens33
+
+BOOTPROTO=static
+NAME=ens33
+DEVICE=ens33
+DNBOOT=yes
+IPADDR=192.168.33.207
+NETMASK=255.255.255.0
+GATEWAY=192.168.33.1
+DNS1=&quot;192.168.33.1&quot;
+</code></pre><p>ifconfig命令<br>禁用或者重新激活网卡（必须使用超级用户账号登录）<br>格式： ifconfig   网络接口 up      ifconfig   网络接口 down<br>设置网络接口的ip地址、子网掩码<br>格式： ifconfig    网络接口 ip地址[/掩码长度]</p>
+<h5 id="设置SELinux"><a href="#设置SELinux" class="headerlink" title="设置SELinux"></a>设置SELinux</h5><p> 查看SElinux，可能返回的结果有三种<br>Enforcing：强制模式，代表记录安全警告且阻止可疑行为<br>Permissive：宽容模式，代表记录安全警告但不阻止可疑行为<br>Disable：关闭</p>
+<p>当前有效<br>setenforce    [ Enforcing | Permissive| 1| 0 ]<br>该命令可以立即改变SELinux运行状态，在Enforcing 和Permissive  之间切换，关机重启之后失效。<br> 永久有效<br>修改配置文件/etc/selinux/config，将SELINUX=enforcing修改为SELINUX=disabled重启生效</p>
+<h3 id="熟悉Linux基础命令"><a href="#熟悉Linux基础命令" class="headerlink" title="熟悉Linux基础命令"></a>熟悉Linux基础命令</h3><h4 id="Linux的基本格式"><a href="#Linux的基本格式" class="headerlink" title="Linux的基本格式"></a>Linux的基本格式</h4><p>Linux命令的通用命令格式<br>命令字  [选项]  [参数]<br>选项及参数的含义<br>选项：用于调节命令的具体功能<br>参数：命令操作的对象，如文件、目录名等<br>ls：显示文件和目录列表(list)<br>常用参数：<br>-l (long)<br>-a(all)         注意隐藏文件、特殊目录.和..<br>-t    (time)</p>
+<h5 id="Linux的命令帮助"><a href="#Linux的命令帮助" class="headerlink" title="Linux的命令帮助"></a>Linux的命令帮助</h5><p>内部命令：属于Shell解析器的一部分<br>cd 切换目录（change directory）<br>pwd 显示当前工作目录（print working directory）<br>help 帮助<br>外部命令：独立于Shell解析器之外的文件程序<br>ls 显示文件和目录列表（list）<br>mkdir 创建目录（make directoriy）<br>cp 复制文件或目录（copy）<br>查看帮助文档<br>内部命令：help + 命令（help cd）<br>外部命令：man + 命令（man ls）</p>
+<h5 id="使用命令管理文件和目录"><a href="#使用命令管理文件和目录" class="headerlink" title="使用命令管理文件和目录"></a>使用命令管理文件和目录</h5><p> 目录操作命令<br>pwd、cd、ls、mkdir、du<br> 文件操作命令<br>touch、file、cp、rm、mv、which、find<br> 文件内容操作命令<br>cat、more、less、head、tail、wc、grep<br> 压缩命令<br>gzip、bzip2、tar</p>
+<h5 id="目录操作命令"><a href="#目录操作命令" class="headerlink" title="目录操作命令"></a>目录操作命令</h5><p> pwd命令<br>用途：查看工作目录（Print Working Directory）<br> cd命令<br>用途：切换工作目录（Change Directory）<br>格式：cd   [目录位置]</p>
+<p>ls命令<br>用途：列表（List）显示目录内容<br>格式：ls    [选项]…   [目录或文件名]<br>常用命令选项<br>-l ：详细信息显示<br>-a：显示所有子目录和文件的信息，包括隐藏文件<br>-A：类似于“-a”，但不显示“.”和“..”目录的信息<br>-R：递归显示内容</p>
+<p>mkdir命令<br>用途：创建新的目录（Make Directory）<br>格式：mkdir   [-p]   [/路径/]目录名<br>du命令<br>用途：统计目录及文件的空间占用情况（estimate file space  usage）<br>格式：du    [选项]…    [目录或文件名]<br>常用命令选项<br>-a：统计时包括所有的文件，而不仅仅只统计目录<br>-h：以更易读的字节单位（K、M等）显示信息<br> -s：只统计每个参数所占用空间总的大小</p>
+<h5 id="文件操作命令"><a href="#文件操作命令" class="headerlink" title="文件操作命令"></a>文件操作命令</h5><p> touch命令<br>用途：新建空文件，或更新文件时间标记<br>格式：touch    文件名<br> file命令<br>用途：查看文件类型<br>格式： file   文件名</p>
+<p> cp命令<br>用途：复制（copy）文件或目录<br>格式：cp   [选项]    源文件或目录…   目标文件或目录<br>常用命令选项<br>-r：递归复制整个目录树<br>-p：保持源文件的属性不变<br>-f：强制覆盖目标同名文件或目录<br>-i：需要覆盖文件或目录时进行提醒</p>
+<p>rm命令<br>用途：删除（Remove）文件或目录<br>格式：rm   [选项]   文件或目录<br>常用命令选项<br>-f：强行删除文件，不进行提醒<br>-i：删除文件时提醒用户确认<br>-r：递归删除整个目录树</p>
+<p> mv命令<br>用途：移动（Move）文件或目录—— 如果目标位置与源位置相同，则相当于改名<br>格式：mv   [选项]…   源文件或目录…   目标文件或目录</p>
+<p>which命令<br>用途：显示系统命令所在目录<br>格式： which    &lt;选项&gt;    command（命令名称）<br>常用命令选项<br>-a：将所有由PATH路径中可以找到的指令均列出，而不止第一个被找到的指令名称</p>
+<p>find命令<br>格式： find   &lt;路径&gt;   &lt;选项&gt;   [表达式]<br>find查找的特点<br>从指定路径下递归向下搜索文件<br>支持按照各种条件方式查找<br>支持对查找到的文件再进一步的使用指令操作<br>（例如：删除、统计大小、复制等）</p>
+<h5 id="查询命令"><a href="#查询命令" class="headerlink" title="查询命令"></a>查询命令</h5><p>常用命令选项<br>-name    根据文件名查找<br>-user    根据文件拥有者查找<br>-group    根据文件所属组寻找文件<br>-perm    根据文件权限查找文件<br>-size    根据文件大小查找文件<br>-type    根据文件类型查找（f-普通文件，c-字符设备文件，b-块设备文件，l-链接文件，d-目录）<br>-o    表达式或<br>-and    表达式与</p>
+<h5 id="文件内容操作命令"><a href="#文件内容操作命令" class="headerlink" title="文件内容操作命令"></a>文件内容操作命令</h5><p> cat命令<br>用途：显示出文件的全部内容</p>
+<p>more命令<br>用途：全屏方式分页显示文件内容<br>交互操作方法<br>按Enter键向下逐行滚动<br>按空格键向下翻一屏、按b键向上翻一屏<br>按q键退出</p>
+<p>less命令<br>用途：与more命令相同 </p>
+<p>head命令<br>用途：查看文件开头的一部分内容（默认为10行）<br>格式：head -n 文件名</p>
+<p>tail命令<br>用途：查看文件结尾的少部分内容（默认为10行）<br>格式：tail -n 文件名</p>
+<p>wc命令<br>用途：统计文件中的单词数量（Word Count）等信息<br>格式：wc    [选项]    目标文件<br>常用命令选项<br>-l：统计行数<br>-w：统计单词个数<br>-c：统计字节数</p>
+<p>grep命令<br> 功能说明：查找文件里符合条件的字符串<br> 语法： grep  [选项]   &lt;关键字&gt;  &lt;文件…&gt;<br> 常用选项<br> -c:计算匹配关键字的行数<br> -i:忽略字符大小写的差别<br> -n:显示匹配的行及其行号<br> -s: 不显示不存在或不匹配文本的错误信息<br> -h: 查询多个文件时不显示文件名<br> -l:   查询文件时只显示匹配字符所在的文件名<br>  –color=auto:将找到的关键字部分加上颜色显示</p>
+<p>grep命令<br> 正则表达式简单规则<br> .  : 任意一个字符<br> a<em> : 任意多个a(零个或多个a)<br> a? : 零个或一个a<br> a+ : 一个或多个a<br> .</em> : 任意多个任意字符<br> . : 转义.<br> o{2} : o重复两次<br>grep命令<br> 例如<br> 查询包含lanou的行<br> [root@localhost ~]# grep lanou /etc/passwd<br> 查询不包含lanou的行<br> [root@localhost ~]#  grep -v lanou /etc/passwd<br> 正则表达以lanou开头的行<br> [root@localhost ~]# grep ‘^lanou’ /etc/passwd<br>  正则表达包含oo的行<br>  [root@localhost ~]#  grep ‘.<em>oo.</em>‘  /etc/passwd</p>
+<h5 id="压缩命令"><a href="#压缩命令" class="headerlink" title="压缩命令"></a>压缩命令</h5><p>gzip 压缩（解压）文件或目录，压缩文件后缀为gz<br>bzip2 压缩（解压）文件或目录，压缩文件后缀为bz2<br>tar 文件、目录打（解）包</p>
+<p>命令格式：gzip [选项] 压缩（解压缩）的文件名<br>-d将压缩文件解压（decompress）<br>-l显示压缩文件的大小，未压缩文件的大小，压缩比（list）<br>-v显示文件名和压缩比（verbose）<br>-num用指定的数字num调整压缩的速度，-1或–fast表示最快压缩方法（低压缩比），-9或–best表示最慢压缩方法（高压缩比）。系统缺省值为6</p>
+<p>bzip2命令<br>命令格式：bzip2 [-cdz] 文档名<br>-c将压缩的过程产生的数据输出到屏幕上<br>-d解压缩的参数（decompress）<br>-z压缩的参数（compress）<br>-num 用指定的数字num调整压缩的速度，-1或–fast表示最快压缩方法（低压缩比），-9或–best表示最慢压缩方法（高压缩比）。系统缺省值为6</p>
+<p>tar命令<br>用途：压缩、解压文件<br>格式<br>tar    [cvf]…    压缩名 文件名 （压缩文件）<br>tar    [xvf]…    文件名.tar        （解压文件）<br>常用命令选项<br> -c：创建 .tar 格式的包文件<br>-x：解开.tar格式的包文件<br>-v：输出详细信息<br>-f：表示使用归档文件</p>
+<h2 id="学习Linux的好习惯"><a href="#学习Linux的好习惯" class="headerlink" title="学习Linux的好习惯"></a>学习Linux的好习惯</h2><p>善于查看man page（manual）等帮助文档<br>利用好Tab键<br>掌握好一些快捷键<br>ctrl + c（停止当前进程）<br>ctrl + r（查看命令历史）<br>ctrl + l（清屏，与clear命令作用相同）</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/Linux基础/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/Linux基础/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
