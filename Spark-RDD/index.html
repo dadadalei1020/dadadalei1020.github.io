@@ -145,11 +145,17 @@
 <p>RDD不支持嵌套操作：</p>
 <p><img src="/Spark-RDD/wpsCC98.tmp.jpg" alt="img"> </p>
 <pre><code>
-</code></pre><p>​    <em>// <a href="http://bigdata.doit.cn/huige" target="_blank" rel="noopener">http://bigdata.doit.cn/huige</a>    <a href="http://host:port" target="_blank" rel="noopener">http://host:port</a></em>    <strong>val</strong> lines: RDD[String] = sc.textFile(<strong>“f:/mrdata/teacher.log”</strong>)      <strong>val</strong> proData = lines.map(str =&gt; {       <strong>val</strong> index = str.lastIndexOf(<strong>“/“</strong>)       <strong>val</strong> tName = str.substring(index + 1)       <strong>val</strong> url = <strong>new</strong> URL(str.substring(0, index))       <strong>val</strong> host: String = url.getHost <em>// <a href="http://bigdata.doit.cn" target="_blank" rel="noopener">http://bigdata.doit.cn</a></em>      <strong>val</strong> subject = host.split(<strong>“**</strong>\<strong>**.”</strong>)(0)       ((subject, tName), 1)     })      <em>// 取出学科名称  然后 去重  然后collect</em>    <strong>val</strong> subArrays: Array[String] = proData.map(_._1.<em>1).distinct().collect()     <strong>val</strong> result: RDD[((String, String), Int)] = proData.reduceByKey(</em> + <em>)     <em>// 代码耦合性**//    val subArr = Array(“php”, “bigdata”, “javaee”)</em>    <strong>for</strong> (subject &lt;- subArrays) {       <strong>val</strong> bigdat: RDD[((String, String), Int)] = result.filter(</em>._1.<em>1 == subject)       <strong>val</strong> res: Array[((String, String), Int)] = bigdat.sortBy(-</em>._2).take(<em>topk</em>)       res.foreach(<em>println</em>)     }</p>
-<p><img src="/Spark-RDD/wpsCC99.tmp.jpg" alt="img"> </p>
+
+
+
+
+​    *// http://bigdata.doit.cn/huige    http://host:port*    **val** lines: RDD[String] = sc.textFile(**&quot;f:/mrdata/teacher.log&quot;**)      **val** proData = lines.map(str =&gt; {       **val** index = str.lastIndexOf(**&quot;/&quot;**)       **val** tName = str.substring(index + 1)       **val** url = **new** URL(str.substring(0, index))       **val** host: String = url.getHost *// http://bigdata.doit.cn*      **val** subject = host.split(**&quot;****\\****.&quot;**)(0)       ((subject, tName), 1)     })      *// 取出学科名称  然后 去重  然后collect*    **val** subArrays: Array[String] = proData.map(_._1._1).distinct().collect()     **val** result: RDD[((String, String), Int)] = proData.reduceByKey(_ + _)     *// 代码耦合性**//    val subArr = Array(&quot;php&quot;, &quot;bigdata&quot;, &quot;javaee&quot;)*    **for** (subject &lt;- subArrays) {       **val** bigdat: RDD[((String, String), Int)] = result.filter(_._1._1 == subject)       **val** res: Array[((String, String), Int)] = bigdat.sortBy(-_._2).take(*topk*)       res.foreach(*println*)     }
+
+
+
+</code></pre><p><img src="/Spark-RDD/wpsCC99.tmp.jpg" alt="img"> </p>
 <h2 id="1-2-自定义分区器实现"><a href="#1-2-自定义分区器实现" class="headerlink" title="1.2. 自定义分区器实现"></a>1.2. <strong>自定义分区器实现</strong></h2><p><img src="/Spark-RDD/wpsCCAA.tmp.jpg" alt="img"> </p>
 <p><img src="/Spark-RDD/wpsCCAB.tmp.jpg" alt="img"> </p>
-<p><strong>val</strong> <em>topk</em> = 3    <strong>def</strong> main(args: Array[String]): Unit = {      <strong>val</strong> sc: SparkContext = <em>SparkUtils</em>(<strong>this</strong>.getClass.getSimpleName)      <em>// <a href="http://bigdata.doit.cn/huige" target="_blank" rel="noopener">http://bigdata.doit.cn/huige</a>    <a href="http://host:port" target="_blank" rel="noopener">http://host:port</a></em>    <strong>val</strong> lines: RDD[String] = sc.textFile(<strong>“f:/mrdata/teacher.log”</strong>)      <strong>val</strong> proData = lines.map(str =&gt; {       <strong>val</strong> index = str.lastIndexOf(<strong>“/“</strong>)       <strong>val</strong> tName = str.substring(index + 1)       <strong>val</strong> url = <strong>new</strong> URL(str.substring(0, index))       <strong>val</strong> host: String = url.getHost <em>// <a href="http://bigdata.doit.cn" target="_blank" rel="noopener">http://bigdata.doit.cn</a></em>      <strong>val</strong> subject = host.split(<strong>“**</strong>\<strong>**.”</strong>)(0)       ((subject, tName), 1)     })      <em>// 取出学科名称  然后 去重  然后collect</em>    <strong>val</strong> subArrays: Array[String] = proData.map(_._1.<em>1).distinct().collect()     <strong>val</strong> result: RDD[((String, String), Int)] = proData.reduceByKey(</em> + <em>)      <em>// 分区器   按照自定义的规则  把相同规则的数据， 放到一起（分区）</em>    <strong>val</strong> subPart: RDD[((String, String), Int)] = result.partitionBy(<em>MyPartitioner</em>(subArrays))      <strong>val</strong> finalRes: RDD[((String, String), Int)] = subPart.mapPartitions(it =&gt; {       it.toList.sortBy(-</em>._2).take(<em>topk</em>).iterator     })     finalRes.foreach(<em>println</em>)     sc.stop()   } }  <strong>class</strong> MyPartitioner(subArrays: Array[String]) <strong>extends</strong> Partitioner {   <em>// 学科和分区的编号</em>  <strong>private val</strong> <em>subAndIndexMp</em>: Map[String, Int] = subArrays.zipWithIndex.toMap   <em>// 分区数量</em>  <strong>override def</strong> numPartitions: Int = subArrays.length    <em>// 通过学科名来或者对应的分区编号   映射关系  —&gt; Map[Key,V]</em>  <strong>override def</strong> getPartition(key: Any): Int = {     <em>// key  (String, String)</em>    <strong>val</strong> sub = key.asInstanceOf[(String, String)]._1     <em>// 从集合中取出key对应的value，就是分区编号</em>    <em>subAndIndexMp</em>(sub)   } }  <strong>object</strong> MyPartitioner{   <strong>def</strong> apply(subArrays: Array[String]): MyPartitioner = <strong>new</strong> MyPartitioner(subArrays) }</p>
 <pre><code>val topk = 3
 
   def main(args: Array[String]): Unit = {
@@ -212,9 +218,7 @@ object MyPartitioner{
 <p><em>// 分区器   按照自定义的规则  把相同规则的数据， 放到一起（分区）**</em>val<strong> result: RDD[((String, String), Int)] = proData.reduceByKey(<em>MyPartitioner</em>(subArrays),_ + _) </strong>val*<em> finalRes: RDD[((String, String), Int)] = result.mapPartitions(it =&gt; {   it.toList.sortBy(-_._2).take(</em>topk*).iterator })</p>
 <p>执行效果：</p>
 <p><img src="/Spark-RDD/wpsCDA8.tmp.jpg" alt="img"> </p>
-<h1 id="2-自定义排序"><a href="#2-自定义排序" class="headerlink" title="2. 自定义排序"></a>2. <strong>自定义排序</strong></h1><h2 id="2-1-单条件的排序"><a href="#2-1-单条件的排序" class="headerlink" title="2.1. 单条件的排序"></a>2.1. <strong>单条件的排序</strong></h2><p>​    <strong>val</strong> rdd1: RDD[String] = sc.makeRDD(<em>List</em>(<strong>“zsf 110 9999”</strong>,<strong>“zwj 23 8888”</strong>,<strong>“zzr 22 7777”</strong>,<strong>“sqc 28 1000”</strong>,<strong>“zm 23 888”</strong>))      <em>// 数据预处理</em>    <strong>val</strong> proDat: RDD[(String, Int, Int)] = rdd1.map(str =&gt; {       <strong>val</strong> strs = str.split(<strong>“ “</strong>)       (strs(0), strs(1).toInt, strs(2).toInt)     })      <em>// 按照攻击力排序**//    proDat.sortBy(-_._3).foreach(println)</em></p>
-<pre><code>
-</code></pre><pre><code>2.1.
+<h1 id="2-自定义排序"><a href="#2-自定义排序" class="headerlink" title="2. 自定义排序"></a>2. <strong>自定义排序</strong></h1><h2 id="2-1-单条件的排序"><a href="#2-1-单条件的排序" class="headerlink" title="2.1. 单条件的排序"></a>2.1. <strong>单条件的排序</strong></h2><pre><code>
     val rdd1: RDD[String] = sc.makeRDD(List(&quot;zsf 110 9999&quot;,&quot;zwj 23 8888&quot;,&quot;zzr 22 7777&quot;,&quot;sqc 28 1000&quot;,&quot;zm 23 888&quot;))
 
     // 数据预处理
@@ -229,7 +233,6 @@ object MyPartitioner{
 <p>2， 类必须实现比较规则和序列化特质 ，但是样例类可以不用实现序列化，因为已经默认实现了</p>
 <p>类 必须要实现序列化特质</p>
 <p><img src="/Spark-RDD/wpsCDA9.tmp.jpg" alt="img"> </p>
-<p>   <em>// 数据预处理  用类来封装数据 然后利用类的排序规则</em>    <strong>val</strong> proDat: RDD[Person] = rdd1.map(str =&gt; {       <strong>val</strong> strs = str.split(<strong>“ “</strong>)       <strong>new</strong> Person(strs(0), strs(1).toInt, strs(2).toInt)     })      <em>// 按照攻击力排序</em>    <strong>val</strong> value: RDD[Person] = proDat.sortBy(t =&gt; t)     value.coalesce(1).foreach(<em>println</em>)      sc.stop()   } }  <strong>case class</strong> Person(<strong>val</strong> name: String, <strong>val</strong> age: Int, <strong>val</strong> fight: Int) <strong>extends</strong> Ordered[Person]<em>/\</em> with Serializable <em>/</em>{   <strong>override def</strong> compare(that: Person): Int = {     <em>// 战力的降序 // 如果战力相同 年龄升序</em>    <strong>if</strong> (<strong>this</strong>.fight == that.fight) {       <strong>this</strong>.age - that.age     } <strong>else</strong> {       that.fight - <strong>this</strong>.fight     }   }    <strong>override def</strong> toString = <strong>s”Person(**</strong>$<strong>name</strong>,<strong> </strong>$<strong>age</strong>,<strong> </strong>$<strong>fight</strong>)”**}</p>
 <pre><code>   // 数据预处理  用类来封装数据 然后利用类的排序规则
     val proDat: RDD[Person] = rdd1.map(str =&gt; {
       val strs = str.split(&quot; &quot;)
@@ -257,7 +260,6 @@ case class Person(val name: String, val age: Int, val fight: Int) extends Ordere
   override def toString = s&quot;Person($name, $age, $fight)&quot;
 }
 </code></pre><h2 id="2-3-隐式转换实现"><a href="#2-3-隐式转换实现" class="headerlink" title="2.3. 隐式转换实现"></a>2.3. <strong>隐式转换实现</strong></h2><p><img src="/Spark-RDD/wpsCDB9.tmp.jpg" alt="img"> </p>
-<p><em>// 数据预处理  用类来封装数据 然后利用类的排序规则**</em>val<strong> proDat: RDD[Person2] = rdd1.map(str =&gt; {   </strong>val<strong> strs = str.split(</strong>“ “<strong>)   </strong>new<strong> Person2(strs(0), strs(1).toInt, strs(2).toInt) })  <em>// 隐式的变量</em></strong>implicit  val<strong> ord:Ordering[Person2] = </strong>new<strong> Ordering[Person2] {   </strong>override def<strong> compare(x: Person2, y: Person2): Int = {     x.age - y.age   } }  <em>// 隐式的object   object优先使用</em></strong>implicit object<strong> Ordper </strong>extends<strong> Ordering[Person2] {   </strong>override def<strong> compare(x: Person2, y: Person2): Int = {     y.age - x.age   } }  <em>// 按照攻击力排序</em></strong>val*<em> value: RDD[Person2] = proDat.sortBy(t =&gt; t) value.coalesce(1).foreach(</em>println*)</p>
 <pre><code>// 数据预处理  用类来封装数据 然后利用类的排序规则
 val proDat: RDD[Person2] = rdd1.map(str =&gt; {
   val strs = str.split(&quot; &quot;)
@@ -283,9 +285,7 @@ val value: RDD[Person2] = proDat.sortBy(t =&gt; t)
 value.coalesce(1).foreach(println)
 </code></pre><p>类可以不需要实现比较规则。通过隐式转换获得。隐式的object和隐式的变量。</p>
 <p>隐式object具有优先权。</p>
-<h2 id="2-4-Ordering的on方法和元组封装"><a href="#2-4-Ordering的on方法和元组封装" class="headerlink" title="2.4. Ordering的on方法和元组封装"></a>2.4. <strong>Ordering的on方法和元组封装</strong></h2><p>​    <em>/**</em>      <strong> (String,Int,Int)    原始的数据类型               输入*      </strong> t=&gt;(- t._3,t._2)    比较的业务逻辑<em>      ** (Int,Int)            比较的业务逻辑对应的类型     返回值</em>      <strong>*      </strong>/<strong>//    implicit val ord = Ordering[(Int,Int)].on<a href="t=&gt;(- t._3,t._2">(String,Int,Int)</a>)<em>    </em>// 按照攻击力排序</strong>//    val value = proDat.sortBy(t =&gt; t)<em>    <strong>val</strong> value = proDat.sortBy(t =&gt; (- t._3,t._2))     value.coalesce(1).foreach(</em>println*) </p>
-<pre><code>
-</code></pre><pre><code>    /**
+<h2 id="2-4-Ordering的on方法和元组封装"><a href="#2-4-Ordering的on方法和元组封装" class="headerlink" title="2.4. Ordering的on方法和元组封装"></a>2.4. <strong>Ordering的on方法和元组封装</strong></h2><pre><code>    /**
       * (String,Int,Int)    原始的数据类型               输入
       * t=&gt;(- t._3,t._2)    比较的业务逻辑
       * (Int,Int)            比较的业务逻辑对应的类型     返回值
@@ -373,8 +373,7 @@ scala&gt;
 
 scala&gt; rdd2.top(1)
 res5: Array[(String, Int)] = Array((http://php.51doit.cn/laoliu,1))
-</code></pre><p>scala&gt; import org.apache.spark.storage.StorageLevelimport org.apache.spark.storage.StorageLevel scala&gt; rdd2.persist(StorageLevel.MEMORY_ONLY_SER)res4: rdd2.type = MapPartitionsRDD[2] at map at <console>:26 scala&gt;  scala&gt; rdd2.top(1)res5: Array[(String, Int)] = Array((<a href="http://php.51doit.cn/laoliu,1)" target="_blank" rel="noopener">http://php.51doit.cn/laoliu,1)</a>)</console></p>
-<p>缓存之后，基于缓存过的rdd的操作：读取的数据是从缓存中加载的：（缓存了67.8M）</p>
+</code></pre><p>缓存之后，基于缓存过的rdd的操作：读取的数据是从缓存中加载的：（缓存了67.8M）</p>
 <p><img src="/Spark-RDD/wpsCDF3.tmp.jpg" alt="img"> </p>
 <p>Memory_and_disk</p>
 <p>优先使用内存，内存不足，再使用磁盘</p>
@@ -424,8 +423,7 @@ res6: Array[(String, Int)] = Array((http://php.51doit.cn/laoliu,1), (http://php.
 
 scala&gt; rdd2.map((_,1)).top(1)
 res7: Array[((String, Int), Int)] = Array(((http://php.51doit.cn/laoliu,1),1))  
-</code></pre><p>scala&gt; rdd2.checkpointorg.apache.spark.SparkException: Checkpoint directory has not been set in the SparkContext  at org.apache.spark.rdd.RDD.checkpoint(RDD.scala:1544)  … 48 elided scala&gt; sc.setCheckpointDir(“hdfs://hdp-01:9000/ck-2019”) scala&gt; val rdd1 = sc.textFile(“hdfs://hdp-01:9000/storage”)rdd1: org.apache.spark.rdd.RDD[String] = hdfs://hdp-01:9000/storage MapPartitionsRDD[6] at textFile at <console>:24 scala&gt;  val rdd2 = rdd1.map((<em>,1))rdd2: org.apache.spark.rdd.RDD[(String, Int)] = MapPartitionsRDD[7] at map at <console>:26 scala&gt; rdd2.checkpoint scala&gt; rdd2.top(2)res6: Array[(String, Int)] = Array((<a href="http://php.51doit.cn/laoliu,1)" target="_blank" rel="noopener">http://php.51doit.cn/laoliu,1)</a>, (<a href="http://php.51doit.cn/laoliu,1)" target="_blank" rel="noopener">http://php.51doit.cn/laoliu,1)</a>) scala&gt; rdd2.map((</console></em>,1)).top(1)res7: Array[((String, Int), Int)] = Array(((<a href="http://php.51doit.cn/laoliu,1),1)" target="_blank" rel="noopener">http://php.51doit.cn/laoliu,1),1)</a>)  </console></p>
-<p>有几个 分区，就会生成几个文件：</p>
+</code></pre><p>有几个 分区，就会生成几个文件：</p>
 <p>checkpoint的目录结构：</p>
 <p>/ckDir/Application-标识/rdd-标识/分区数据</p>
 <p><img src="/Spark-RDD/wpsCE08.tmp.jpg" alt="img"> </p>
@@ -488,7 +486,6 @@ res7: Array[((String, Int), Int)] = Array(((http://php.51doit.cn/laoliu,1),1))
 <p>DriverManager.</p>
 <p>conn.prepareStatment()</p>
 <p>ip地址转10进制的方法</p>
-<p> <em>// 定义一个方法，把 定义一个方法，把 ip 地址转换为 地址转换为 10 进制**</em>def<strong> ip2Long(ip: String) = {   </strong>val<strong> split = ip.split(</strong>“<strong><strong>\</strong></strong>.”<strong>)   </strong>var<strong> inum = 0L   </strong>for** (i &lt;- 0 until split.length) {     inum = split(i).toLong | inum &lt;&lt; 8L   }   inum } </p>
 <pre><code>
 // 定义一个方法，把 定义一个方法，把 ip 地址转换为 地址转换为 10 进制
 def ip2Long(ip: String) = {
